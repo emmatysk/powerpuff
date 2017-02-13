@@ -2,13 +2,13 @@
   "name": "express-vue-super-simple",
   "version": "1.0.0",
   "description": "super simple example for express-vue",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

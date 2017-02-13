@@ -31,14 +31,31 @@ app.get('/', function(req, res){
   });
 });
 
-app.get('/users/:userName', function(req, res){
-    var user = users.filter(function(item) {
-        return item.name === req.params.userName;
-    })[0];
-  res.render('user', {
+app.get('/book', function(req, res){
+  res.render('book', {
     data: {
-      title: 'Hello My Name is',
-      user: user
+        title: 'Bordsbokning',
+        message: 'Hello!'
+    },
+    vue: {
+        components: ['message']
+    }
+  });
+});
+
+app.get('/order', function(req, res){
+  res.render('order', {
+    data: {
+      title: 'Ordersida'
+    }
+
+  });
+});
+
+app.get('/overview', function(req, res){
+  res.render('overview', {
+    data: {
+      title: 'Overview'
     }
 
   });
