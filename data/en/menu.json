@@ -1,0 +1,44 @@
+{
+  "foods": [
+    {
+    "order": 1,
+      "label": "Cheese burger",
+      "options": [
+        { "extra": "Onion" 
+        },
+        { "extra": "Cheese"
+        }
+      ]
+    },
+    {
+    "order": 2,
+      "label": "Vegan burger",
+      "options": [
+        { "extra": "Onion" 
+        },
+        { "extra": "Truffle"
+        }
+      ]
+    }
+  ],
+  "drinks": [
+    {
+    "order": 1,
+      "label": "Coke",
+      "options": [
+        { "extra": "Ice"
+        },
+        { "extra": "Lemon"
+        }
+      ]
+    },
+    {
+    "order": 2,
+      "label": "Beer",
+      "options": [
+        {  "extra": "Lemon"
+        }
+      ]
+    }
+  ]
+}

@@ -1,29 +1,16 @@
 {
-  "name": "express-vue-super-simple",
-  "version": "1.0.0",
-  "description": "super simple example for express-vue",
-  "main": "server.js",
-  "directories": {
-    "example": "examples"
-  },
+  "name": "nation-pub-skeleton",
+  "version": "0.0.1",
+  "description": "Stub for creating an ordering system",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danmademe/express-vue-super-simple.git"
-  },
-  "author": "Daniel Cherubini",
+  "author": "Mikael Laaksoharju",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/danmademe/express-vue/issues"
-  },
-  "homepage": "https://github.com/danmademe/express-vue-super-simple#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "express-vue": "^3.2.0",
-    "bootstrap": "^3.3.7",
+    "socket.io": "^1.7.2",
     "vue": "^2.1.5"
   }
 }
