@@ -57,9 +57,13 @@ app.use('/vue', express.static(path.join(__dirname, '/node_modules/vue/dist/')))
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'views/diner.html'));
 });
-// Serve kitchen.html as subpage
-app.get('/kitchen', function(req, res) {
-  res.sendFile(path.join(__dirname, 'views/kitchen.html'));
+
+app.get('/order', function(req, res) {
+  res.sendFile(path.join(__dirname, 'views/order.html'));
+});
+
+app.get('/overview', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views/overview.html'));
 });
 
 io.on('connection', function(socket) {
