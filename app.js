@@ -19,6 +19,7 @@ var lang = "sv";
 var getLabelsAndMenu = function() {
   var ui = require("./data/"+ lang +"/ui.json");
   var menu = require("./data/"+ lang +"/menu.json");
+  var tables = require("./data/tables.json");
   return {uiLabels: ui, menu: menu};
 };
 
@@ -48,6 +49,19 @@ var orders = function() {
   };
 }(); // instantiate the class immediately
 
+var tables = function() {
+    var tables = {};
+
+    var getAll = function() {
+        return tables;
+    };
+
+    //expose functions
+    return {
+        getAll : getAll
+    };
+}(); // instantiate the class immediately
+
 // Serve static assets from public/
 app.use(express.static(path.join(__dirname, 'public/')));
 // Serve vue from vue/ directory
@@ -68,8 +82,11 @@ app.get('/overview', function(req, res) {
 
 io.on('connection', function(socket) {
   // Send list of orders and text labels when a client connects
-  io.emit('initialize', { orders: orders.getAll(), 
-                          labelsAndMenu: getLabelsAndMenu() });
+  io.emit('initialize', {
+      orders: orders.getAll(),
+      tables: tables.getAll(),
+      labelsAndMenu: getLabelsAndMenu()
+  });
 
   // When someone orders something
   socket.on('order', function(dish) {

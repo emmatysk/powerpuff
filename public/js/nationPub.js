@@ -9,6 +9,7 @@ var sharedVueStuff = {
   data: {
     orders: {},
     menu: {},
+    tables: {},
     uiLabels: {}
   },
   created: function() {
