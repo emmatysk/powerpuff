@@ -3,29 +3,15 @@
     <h2>{{title}}</h2>
 
     <div id="overview">
-      <ul>
-        <li>
-          Lediga bord: <strong>{{ availableTables }}</strong>
-        </li>
-        <li>
-          Lediga platser: <strong>{{ availableSeats }}</strong>
-        </li>
-      </ul>
+      Lediga bord: <strong>{{ availableTables }}</strong>
+      <br>
+      Lediga platser: <strong>{{ availableSeats }}</strong>
     </div>
 
-    <table class="table table-hover table-striped">
-      <thead>
-        <tr>
-          <th>Bord #</th>
-          <th>Ledigt</th>
-          <th>Platser</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <diner-table-simple :table="table" v-for="table in tables"></diner-table-simple>
-      </tbody>
-    </table>
+    <h3>Bordslista</h3>
+    <ul>
+      <diner-table-simple :table="table" v-for="table in tables"></diner-table-simple>
+    </ul>
   </div>
 </template>
 
