@@ -1,3 +1,19 @@
 body {
     padding-top: 50px;
 }
+
+tr.available {
+    background-color: #fff;
+}
+
+tr.waiting {
+    background-color: #fff4a5;
+}
+
+tr.occupied {
+    background-color: #96ec96;
+}
+
+tr.critical {
+    background-color: #ffd2ca;
+}
