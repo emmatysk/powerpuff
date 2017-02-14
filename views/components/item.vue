@@ -1,12 +1,12 @@
 <template lang="html">
-  <div class="">
-      <h1>{{message}}</h1>
-  </div>
+  <li>
+    {{ item.title }} ({{ item.type }})
+  </li>
 </template>
 
 <script>
 export default {
-    props: ['message']
+  props: [ 'item' ]
 }
 </script>
 

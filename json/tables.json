@@ -1,8 +1,7 @@
 [
   {
     "id": 1,
-    "status": "available", // available / waiting / waiting-critical / delivered
-                           // white     / yellow  / red              / green
+    "status": "available",
     "capacity": 5,
     "available": 5,
     "timer": false

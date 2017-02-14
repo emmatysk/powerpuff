@@ -3,7 +3,7 @@
     <h2>{{title}}</h2>
 
     <ul>
-      <diner-table-simple :table="table" v-for="table in tables"></diner-table-simple>
+      <diner-table :table="table" v-for="table in tables"></diner-table>
     </ul>
   </div>
 </template>

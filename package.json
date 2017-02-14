@@ -22,6 +22,8 @@
   "homepage": "https://github.com/danmademe/express-vue-super-simple#readme",
   "dependencies": {
     "express": "^4.14.0",
-    "express-vue": "^3.2.0"
+    "express-vue": "^3.2.0",
+    "bootstrap": "^3.3.7",
+    "vue": "^2.1.5"
   }
 }

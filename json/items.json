@@ -1,0 +1,137 @@
+[
+  {
+    "title": "McBurger ®",
+    "name": "mc-burger",
+    "type": "burger",
+    "note_class": "info",
+    "note": "wazaa",
+    "lactose": null,
+    "gluten": null,
+    "kcal": 550,
+    "info": [],
+    "image": "/img/burger4.png",
+    "chosen": false
+  }, {
+    "title": "Super Burger #2",
+    "name": "super-burger-2",
+    "type": "burger",
+    "note_class": false,
+    "note": false,
+    "lactose": false,
+    "gluten": false,
+    "kcal": 730,
+    "info": [
+      "<span class=\"glyphicon glyphicon-heart\"></span> attack"
+    ],
+    "image": "/img/burger3.png",
+    "chosen": false
+  }, {
+    "title": "Super Burger #3",
+    "name": "super-burger-3",
+    "type": "burger",
+    "note_class": "success",
+    "note": "fresh",
+    "lactose": true,
+    "gluten": false,
+    "kcal": 610,
+    "info": [],
+    "image": "/img/burger1.png",
+    "chosen": false
+  }, {
+    "title": "Super Burger #4",
+    "name": "super-burger-4",
+    "type": "burger",
+    "note_class": "danger",
+    "note": "wut?",
+    "lactose": false,
+    "gluten": true,
+    "kcal": 860,
+    "info": [],
+    "image": "/img/burger6.png",
+    "chosen": false
+  }, {
+    "title": "Super Burger #5",
+    "name": "super-burger-5",
+    "type": "burger",
+    "note_class": false,
+    "note": false,
+    "lactose": true,
+    "gluten": true,
+    "kcal": 670,
+    "info": [],
+    "image": "/img/burger7.png",
+    "chosen": false
+  }, {
+    "title": "Super Burger #6",
+    "name": "super-burger-6",
+    "type": "burger",
+    "note_class": false,
+    "note": null,
+    "lactose": true,
+    "gluten": null,
+    "kcal": 420,
+    "info": [],
+    "image": "/img/burger5.png",
+    "chosen": false
+  }, {
+    "title": "Beer",
+    "name": "beer",
+    "type": "drink",
+    "note_class": false,
+    "note": false,
+    "info": [],
+    "image": "/img/beer.png",
+    "options": {},
+    "chosen": false
+  }, {
+    "title": "Red Wine",
+    "name": "red-wine",
+    "type": "drink",
+    "note_class": false,
+    "note": false,
+    "info": [
+      "Note #1",
+      "Note #2"
+    ],
+    "image": "/img/red-wine.png",
+    "options": {},
+    "chosen": false
+  }, {
+    "title": "Water",
+    "name": "water",
+    "type": "drink",
+    "note_class": false,
+    "note": false,
+    "info": [],
+    "image": "/img/water.png",
+    "options": {},
+    "chosen": false
+  }, {
+    "title": "Coca Cola ®",
+    "name": "soft-drink",
+    "type": "drink",
+    "note_class": "primary",
+    "note": "soft drinks",
+    "info": [],
+    "image": "/img/cola.png",
+    "options": {
+      "Coca Cola ®": "/img/cola.png",
+      "Fanta ®": "/img/fanta.png"
+    },
+    "chosen": false
+  }, {
+    "title": "Espresso",
+    "name": "coffee",
+    "type": "drink",
+    "note_class": "warning",
+    "note": "coffee",
+    "info": [],
+    "image": "/img/espresso.png",
+    "options": {
+       "Espresso": "/img/espresso.png",
+       "Latte": "/img/latte.png",
+       "Capuccino": "/img/capuccino.png"
+    },
+    "chosen": false
+  }
+]
