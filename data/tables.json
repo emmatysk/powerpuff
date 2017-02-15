@@ -7,19 +7,19 @@
     "timer": false
   }, {
     "id": 2,
-    "status": "warning",
+    "status": "waiting",
     "capacity": 5,
     "available": 2,
     "timer": 80.5
   }, {
     "id": 3,
-    "status": "success",
+    "status": "ok",
     "capacity": 4,
     "available": 1,
     "timer": 100.9
   }, {
     "id": 4,
-    "status": "danger",
+    "status": "critical",
     "capacity": 6,
     "available": 3,
     "timer": 312.1
