@@ -20,7 +20,7 @@ var getLabelsAndMenu = function() {
   var ui = require("./data/"+ lang +"/ui.json");
   var menu = require("./data/"+ lang +"/menu.json");
   var tables = require("./data/tables.json");
-  return {uiLabels: ui, menu: menu};
+  return {uiLabels: ui, menu: menu, tables: tables};
 };
 
 // Store orders in a an anonymous class for now. 
@@ -56,9 +56,22 @@ var tables = function() {
         return tables;
     };
 
+    var setStatus = function(id, status) {
+        tables[id].status = status;
+    };
+
+    var startTimer = function(id) {
+    };
+
+    var stopTimer = function(id) {
+    };
+
     //expose functions
     return {
-        getAll : getAll
+        getAll : getAll,
+        setStatus: setStatus,
+        startTimer: startTimer,
+        stopTimer: stopTimer
     };
 }(); // instantiate the class immediately
 
@@ -73,7 +86,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/kitchen', function(req, res) {
-    res.sendFile(path.join(__dirname, 'views/kitchen.html'));
+  res.sendFile(path.join(__dirname, 'views/kitchen.html'));
 });
 
 app.get('/order', function(req, res) {

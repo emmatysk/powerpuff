@@ -17,6 +17,7 @@ var sharedVueStuff = {
       this.orders = data.orders;
       this.uiLabels = data.labelsAndMenu.uiLabels;
       this.menu = data.labelsAndMenu.menu;
+      this.tables = data.labelsAndMenu.tables;
     }.bind(this));
 
     socket.on('currentQueue', function(data) {
