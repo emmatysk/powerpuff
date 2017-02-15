@@ -2,18 +2,18 @@ body {
     padding-top: 50px;
 }
 
-tr.available {
+.available {
     background-color: #fff;
 }
 
-tr.waiting {
+.waiting {
     background-color: #fff4a5;
 }
 
-tr.occupied {
+.ok {
     background-color: #96ec96;
 }
 
-tr.critical {
+.critical {
     background-color: #ffd2ca;
 }
