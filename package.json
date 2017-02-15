@@ -9,6 +9,7 @@
   "author": "Mikael Laaksoharju",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.14.0",
     "socket.io": "^1.7.2",
     "vue": "^2.1.5"
