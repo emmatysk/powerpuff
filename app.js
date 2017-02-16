@@ -79,6 +79,7 @@ var tables = function() {
 app.use(express.static(path.join(__dirname, 'public/')));
 // Serve vue from vue/ directory
 app.use('/vue', express.static(path.join(__dirname, '/node_modules/vue/dist/')));
+app.use('/dist', express.static(path.join(__dirname, '/node_modules/')));
 
 // Serve diner.html as root page
 app.get('/', function(req, res) {

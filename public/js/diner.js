@@ -17,8 +17,6 @@ new Vue({
   el: '#ordering',
   mixins: [sharedVueStuff], // include stuff that goes to both diner and kitchen
   data: {
-    mainDish: [],
-    extras: []
   },
   methods: {
     placeOrder: function() {
