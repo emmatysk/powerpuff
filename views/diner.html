@@ -18,6 +18,7 @@
 		.st8{fill:#CAEAE1;}
 		.st9{fill:#FFFFFF;stroke:#AFAFAF;stroke-width:5;stroke-miterlimit:10;}
 		.st10{fill:#FFFFFF;stroke:#AFAFAF;stroke-width:3;stroke-miterlimit:10;}
+        .selected{fill:#FFFFFF;stroke:#25CACE;stroke-width:7;stroke-miterlimit:10;}
 		.st11{fill:#565656;stroke:#3A3A3A;stroke-width:0.5;stroke-miterlimit:10;}
 		.st12{font-size:52px;}
 		.st13{fill:#FFFFFF;stroke:#25CACE;stroke-width:7;stroke-miterlimit:10;}
@@ -178,9 +179,9 @@
               </g>
             </g>
           </g>
-          <g id="bord1">
+          <g id="bord1" @click="selectTable('1')">
             <g>
-              <path class="st10" d="M215.4,164.9H58.9c-8.1,0-14.7-6.3-14.7-14V78.8c0-7.7,6.6-14,14.7-14h156.5c8.1,0,14.7,6.3,14.7,14v72.1
+              <path class="st10" :class="{selected: selectedTable=='1'}" d="M215.4,164.9H58.9c-8.1,0-14.7-6.3-14.7-14V78.8c0-7.7,6.6-14,14.7-14h156.5c8.1,0,14.7,6.3,14.7,14v72.1
 			C230.1,158.6,223.5,164.9,215.4,164.9z"/>
               <g>
                 <text transform="matrix(1 0 0 1 115.6154 133.115)" class="st11 st5 st12">1</text>
@@ -193,7 +194,7 @@
           <form>
               <div class="form-group">
                 <label for="table-number">Table number:</label>
-                <input type="text" class="form-control" id="table-number">
+                <input type="text" class="form-control" id="table-number" :value="selectedTable">
               </div>
             <div class="form-group">
               <button id="book-table" class="btn btn-primary">Boka</button>
