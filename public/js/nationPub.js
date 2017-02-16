@@ -23,5 +23,11 @@ var sharedVueStuff = {
     socket.on('currentQueue', function(data) {
       this.orders = data;
     }.bind(this));
+  },
+  methods: {
+    setStatus: function(table, status) {
+      table.status = status
+      socket.emit('setStatus', table.id, status);
+    }
   }
 };

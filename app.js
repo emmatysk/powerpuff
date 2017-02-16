@@ -50,14 +50,14 @@ var orders = function() {
 }(); // instantiate the class immediately
 
 var tables = function() {
-    var tables = {};
+    var tables = getLabelsAndMenu().tables;
 
     var getAll = function() {
         return tables;
     };
 
     var setStatus = function(id, status) {
-        tables[id].status = status;
+        tables[id-1].status = status;
     };
 
     var startTimer = function(id) {
@@ -114,6 +114,10 @@ io.on('connection', function(socket) {
   socket.on('orderDone', function(orderId) {
     orders.markDone(orderId);
     io.emit('currentQueue', orders.getAll());
+  });
+
+  socket.on('setStatus', function(tableId, status) {
+    tables.setStatus(tableId, status);
   });
 });
 
