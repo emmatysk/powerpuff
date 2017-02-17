@@ -30,13 +30,7 @@ new Vue({
           this.selectedTable = number;
       }
     },
-    addBorder() {
 
-    },
-    handler: function(number) {
-      this.selectTable(number);
-      this.addBorder();
-    }
 
   }
 });

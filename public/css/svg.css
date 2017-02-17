@@ -1,0 +1,5 @@
+.available path{fill:#ffc266;stroke:#d29f00;stroke-width:3;stroke-miterlimit:10;}
+.available .selected{fill:#ffc266;stroke:#d29f00;stroke-width:7;stroke-miterlimit:10;}
+.critical path{fill:#ff4d4d;stroke:#cc0000;stroke-width:3;stroke-miterlimit:10;}
+.critical .selected{fill:#ff4d4d;stroke:#cc0000;stroke-width:7;stroke-miterlimit:10;}
+.critical text{fill:#ffffff; stroke:#ffffff;}

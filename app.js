@@ -90,7 +90,7 @@ app.get('/kitchen', function(req, res) {
   res.sendFile(path.join(__dirname, 'views/kitchen.html'));
 });
 
-app.get('/order', function(req, res) {
+app.get('/order/:tablenumber', function(req, res) {
   res.sendFile(path.join(__dirname, 'views/order.html'));
 });
 
