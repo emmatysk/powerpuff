@@ -1,33 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nationsmatsalen</title>
-  <link rel="stylesheet" href="css/nationPub.css">
-	<link rel="stylesheet" href="dist/bootstrap/dist/css/bootstrap.min.css">
-  <style type="text/css">
-    .st0{fill:#F4F4F4;stroke:#A8A8A8;stroke-miterlimit:10;}
-    .st1{fill:#909091;}
-    .st2{fill:#F4F4F4;stroke:#A8A8A8;stroke-width:2;stroke-miterlimit:10;}
-    .st3{fill:#909091;stroke:#606060;stroke-width:4;stroke-miterlimit:10;}
-    .st4{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
-    .st5{font-family:'ParisineStdClair-Regular';}
-    .st6{font-size:63.2515px;}
-    .st7{fill:#CAEAE1;stroke:#FFFFFF;stroke-width:6;stroke-miterlimit:10;}
-    .st8{fill:#CAEAE1;}
-    .st9{fill:#FFFFFF;stroke:#AFAFAF;stroke-width:5;stroke-miterlimit:10;}
-    .table{fill:#FFFFFF;stroke:#AFAFAF;stroke-width:3;stroke-miterlimit:10;}
-    .st11{fill:#565656;stroke:#3A3A3A;stroke-width:0.5;stroke-miterlimit:10;}
-    .st12{font-size:52px;}
-    .selected{fill:#FFFFFF;stroke:#25CACE;stroke-width:7;stroke-miterlimit:10;}
-  </style>
-</head>
-<body>
-  <div id="ordering">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-7">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" x="0px" y="0px" viewBox="0 0 892 1042" style="enable-background:new 0 0 892 1042;" xml:space="preserve">
 <g id="Lager_1">
   <path class="st0" d="M872.3,1024.8H19.7c-3.1,0-5.7-2.5-5.7-5.7V21.9c0-3.1,2.5-5.7,5.7-5.7h852.7c3.1,0,5.7,2.5,5.7,5.7v997.3   C878,1022.3,875.5,1024.8,872.3,1024.8z"/>
@@ -160,28 +130,3 @@
   </g>
 </g>
 </svg>
-        </div>
-        <div class="col-lg-5">
-          <form>
-              <div class="form-group">
-                <label for="table-number">Table number:</label>
-                <input type="text" class="form-control" id="table-number" :value="selectedTable">
-              </div>
-            <div class="form-group">
-              <button id="book-table" class="btn btn-primary">Boka</button>
-            </div>
-            <div class="form-group">
-              <button class="btn btn-default">Avboka</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="/vue/vue.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="js/nationPub.js"></script>
-  <script src="js/diner.js"></script>
-</body>
-</html>
