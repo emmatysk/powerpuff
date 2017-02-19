@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "status": "critical",
+    "status": "available",
     "capacity": 5,
     "available": 5,
     "timer": false
@@ -25,6 +25,60 @@
     "timer": 312.1
   }, {
     "id": 5,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 6,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 7,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 8,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 9,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 10,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 11,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 12,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 13,
+    "status": "available",
+    "capacity": 4,
+    "available": 4,
+    "timer": false
+  }, {
+    "id": 14,
     "status": "available",
     "capacity": 4,
     "available": 4,
