@@ -1,0 +1,75 @@
+.col-lg-12.row {
+  height: 80px;
+}
+
+.col-lg-6.btn {
+  height: 70px;
+}
+.col-lg-3.btn {
+  height: 70px;
+}
+
+#matknapp{
+  background-color: #F6A348;
+}
+#matknapp:hover{
+  background-color: #F58F29;
+}
+
+#dryckesknapp {
+  background-color: #5D8CBA;
+}
+
+#dryckesknapp:hover {
+  background-color: #547EA7;
+}
+
+.mat {
+  background-color: #F6A348 !important;
+}
+.mat:hover {
+    background-color: #F58F29 !important;
+}
+
+.dryck {
+  background-color: #5D8CBA !important;
+}
+.dryck:hover {
+      background-color: #547EA7 !important;
+
+}
+
+  .btn #changebutton {
+     border: 2px solid;
+     border-color: black;
+     padding: 15px 32px;
+     text-align: center;
+     font-size: 16px;
+     margin: 6px 0px;
+
+     padding-right: 10px;
+   }
+
+.btn:hover {
+  background: #ff8c00;
+  text-decoration: none;
+}
+
+#right {
+  overflow-y: auto;
+  height: 763px;
+  background-color: grey;
+  border-radius: 30px;
+}
+
+#left {
+  border: 10px solid;
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: lightgrey;
+  height: 1000px;
+}
+
+#changebutton {
+
+}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Projekt</title>
+        <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../public/css/bar.css">
+        <!--<script src="js/vue.js"></script>-->
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+
+ <body>
+
+   <script>
+   $('#changeModal').on('shown.bs.modal', function (event) {
+  var button = $(event.realatedTarget)
+  var recipient = button.data("whatever")
+
+  var modal = $(this)
+  modal.find(".modal-title").text("Ändra din order")
+  modal.find(".modal-body input").val(recipient)
+})
+</script>
+
+
+      <div id="vue" class="container-fluid ">
+        <div id="left" class="col-lg-8">
+          <div id="padding">
+            <div class="col-lg-12 row">
+                <button id="matknapp" @click="mat" class="col-lg-6 btn" > Mat</button>
+                <button id="dryckesknapp" @click="dryck" class="col-lg-6 btn" > Dryck</button>
+            </div>
+          </div>
+
+            <div class="col-lg-12 row">
+              <button @click="add(item)" v-bind:class="{mat: visaMat, dryck: visaDryck}" class="col-lg-3 btn" v-for="item in currentlist"><h4>{{item.title}}</h4></button>
+            </div>
+
+        </div>
+
+
+     <div id="right" class ="col-lg-4">
+
+       <h3> Din beställning </h3>
+        <div class="col-lg-8 row" v-for="item in orderlist">
+          <a href="#" @click="remove(item)"> <span class="glyphicon glyphicon-remove" style="font-size: 30px;"> </span> </a>
+          <button id="changebutton" @click="change(item)" style="font-size: 20px;" data-whatever="item" data-toggle="modal" data-target="#changeModal"> {{item.title}}  {{item.pris}}kr </button>
+        </div>
+        <div class="col-lg-12 navbar-fixed-bottom" style="margin-right: 10%;" >
+          <div class="col-lg-4 navbar-right">
+      <button @click="betala" class="col-lg-4 btn btn-danger" > <h4> Rensa </h4></button>
+      <button class="col-lg-8 btn btn-success" data-toggle="modal" data-target="#payModal"><h4>Skicka order och betala</h4></button>
+    </div>
+  </div>
+
+      <!-- PayModal -->
+      <div class="modal fade" id="payModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- PayModal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Din order</h4>
+            </div>
+            <div class="modal-body">
+            <p v-for="item in orderlist"> {{item.title}} {{item.pris}}kr </p>
+              <h3>Total: {{totalprice}}kr</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
+              <button @click="betala" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
+                <button @click="betala" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ChangeModal -->
+      <div class="modal fade" id="changeModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- ChangeModal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">New message</h4>
+            </div>
+            <div class="modal-body">
+            <div v-for="item in hej">
+            <a href="#" @click="removeingrident(item)"> <span class="glyphicon glyphicon-remove" style="font-size: 15px;"> </span>  </a>
+                <p style="font-size: 15px">{{item}}</p>
+          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
+                <button @click="change" type="button" class="btn btn-success" data-dismiss="modal">Ändra</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+     </div>
+
+    </div>
+
+      <script src="../public/js/bar.js"></script>
+    </body>
+
+
+<!--    <script>
+        var vue = new Vue({
+            el: '#vue',
+            data: {
+                foodlist: [
+                    {
+                        "title": "Alex Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["GlutenfrittBröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Jakob Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Senap", "ketchup", "lök", "Sallad", "Ost", "Hallomi"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Nicklas Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Emma Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Erik Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Hamburgartallrik",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Kebabtallrik",
+                        "kCal": "650",
+                        "gluten": "Nej",
+                        "lactose": "Ja",
+                        "grupp": "Mat",
+                        "pris": 60,
+                        "ingredienser": ["Kebab", "Pommes", "Sallad", "Vitlökssås"]
+                    },
+                    {
+                        "title": "Pulled Pork",
+                        "kCal": "550",
+                        "gluten": "Ja",
+                        "lactose": "Ja",
+                        "grupp": "Mat",
+                        "pris": 75,
+                        "ingredienser": ["Fläsk", "Potatis", "BBQ-sås", "Sallad"]
+                    },
+                    {
+                        "title": "Fisk",
+                        "kCal": "1000",
+                        "gluten": "Ja",
+                        "lactose": "Ja",
+                        "grupp": "onstigt",
+                        "pris": 50,
+                        "ingredienser": ["Fisk", "Potatis", "Fisk-sås", "Sallad"]
+                    },
+                    {
+                        "title": "Veggie",
+                        "kCal": "1",
+                        "gluten": "Ja",
+                        "lactose": "Ja",
+                        "grupp": "Något konstigt",
+                        "pris": 150,
+                        "ingredienser": ["Sallad"]
+                    }],
+
+                drinklist: [
+                    {
+                      "title": "Coca Cola",
+                      "grupp": "Läskeblask",
+                      "pris": 150,
+                      "ingredienser": ["SOCKER"]
+                    },
+                    {
+                      "title": "Coca Cola Zero",
+                      "grupp": "Läskeblask",
+                      "pris": 150,
+                      "ingredienser": ["SOCKERFRI"]
+                    },
+                    {
+                      "title": "Fanta Zero",
+                      "grupp": "Läskeblask",
+                      "pris": 110,
+                      "ingredienser": ["Sockerfri"]
+                    },
+                    {
+                      "title": "Fanta",
+                      "grupp": "Läskeblask",
+                      "pris": 110,
+                      "ingredienser": ["Socker"]
+                    },
+                    {
+                      "title": "Sprite",
+                      "grupp": "Läskeblask",
+                      "pris": 120,
+                      "ingredienser": ["Socker"]
+                    }],
+
+                currentlist: [
+                  {
+                        "title": "Alex Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["GlutenfrittBröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Jakob Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Senap", "ketchup", "lök", "Sallad", "Ost", "Hallomi"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Nicklas Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Emma Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Erik Special",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Hamburgartallrik",
+                        "kCal": "800",
+                        "gluten": "Ja",
+                        "lactose": "Nej",
+                        "grupp": "Mat",
+                        "pris": 65,
+                        "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+                        "changed": []
+                    },
+                    {
+                        "title": "Kebabtallrik",
+                        "kCal": "650",
+                        "gluten": "Nej",
+                        "lactose": "Ja",
+                        "grupp": "Mat",
+                        "pris": 60,
+                        "ingredienser": ["Kebab", "Pommes", "Sallad", "Vitlökssås"]
+                    },
+                    {
+                        "title": "Pulled Pork",
+                        "kCal": "550",
+                        "gluten": "Ja",
+                        "lactose": "Ja",
+                        "grupp": "Mat",
+                        "pris": 75,
+                        "ingredienser": ["Fläsk", "Potatis", "BBQ-sås", "Sallad"]
+                    },
+                    {
+                        "title": "Fisk",
+                        "kCal": "1000",
+                        "gluten": "Ja",
+                        "lactose": "Ja",
+                        "grupp": "onstigt",
+                        "pris": 50,
+                        "ingredienser": ["Fisk", "Potatis", "Fisk-sås", "Sallad"]
+                    },
+                    {
+                        "title": "Veggie",
+                        "kCal": "1",
+                        "gluten": "Ja",
+                        "lactose": "Ja",
+                        "grupp": "Något konstigt",
+                        "pris": 150,
+                        "ingredienser": ["Sallad"]
+                    }],
+
+                orderlist: [],
+                hej: [],
+                visaMat: true,
+                visaDryck: false
+
+            },
+            methods: {
+                mat: function() {
+                  this.currentlist = this.foodlist
+                  this.visaDryck = false
+                  this.visaMat = true
+                },
+                dryck: function() {
+                  this.currentlist = this.drinklist
+                  this.visaDryck = true
+                  this.visaMat = false
+                },
+                add: function(item) {
+                  var newItem = Vue.util.extend({}, item)
+                  this.orderlist.push(JSON.parse( JSON.stringify(item)));
+
+                },
+                remove: function(item) {
+                  var index = this.orderlist.indexOf(item)
+                  this.orderlist.splice(index, 1)
+                },
+                betala: function() {
+                  this.orderlist = []
+                },
+                change: function(e) {
+                  this.hej = e.ingredienser
+
+                  //this.hej.push(ar);
+                  //this.hej = Vue.util.extend({}, e.ingredienser);
+                },
+                removeingrident: function(item) {
+                var index = this.hej.indexOf(item)
+                this.hej.splice(index, 1)
+                }
+
+
+            },
+
+          computed: {
+                totalprice: function() {
+                  var tot = 0;
+                  for(var i = 0; i < this.orderlist.length; i++) {
+                    tot += this.orderlist[i].pris;
+                  }
+                  return tot;
+                }
+
+            }
+
+
+
+
+        })
+    </script> -->
+
+
+
+</html>
