@@ -91,7 +91,7 @@ app.get('/kitchen', function(req, res) {
 });
 
 app.get('/order/:tablenumber', function(req, res) {
-  res.sendFile(path.join(__dirname, 'views/order.html'));
+  res.sendFile(path.join(__dirname, 'views/bar.html'));
 });
 
 app.get('/overview', function(req, res) {
