@@ -11,29 +11,11 @@ text {
     -ms-user-select: none;
     user-select: none;
 }
-
-/** DO NOT EDIT BELOW THIS COMMENT */
-.st0{fill:#F4F4F4;stroke:#A8A8A8;stroke-miterlimit:10;}
-.st1{fill:#909091;}
-.st2{fill:#F4F4F4;stroke:#A8A8A8;stroke-width:2;stroke-miterlimit:10;}
-.st3{fill:#909091;stroke:#606060;stroke-width:4;stroke-miterlimit:10;}
-.st4{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
-.st5{font-family:'ParisineStdClair-Regular';}
-.st6{font-size:63.2515px;}
-.st7{fill:#CAEAE1;stroke:#FFFFFF;stroke-width:6;stroke-miterlimit:10;}
-.st8{fill:#CAEAE1;}
-.st9{fill:#FFFFFF;stroke:#AFAFAF;stroke-width:5;stroke-miterlimit:10;}
-.table{fill:#FFFFFF;stroke:#AFAFAF;stroke-width:3;stroke-miterlimit:10;}
-.st11{fill:#565656;stroke:#3A3A3A;stroke-width:0.5;stroke-miterlimit:10;}
-.st12{font-size:52px;}
-.selected{fill:#FFFFFF;stroke:#25CACE;stroke-width:7;stroke-miterlimit:10;}
-
 #test{
     width: 180px;
     border-radius: 5px;
     border: 0.4px solid #ababab;
     background-color: #ececec;
-
     padding: 1em;
     position: fixed;
     top: 13px;
@@ -48,9 +30,11 @@ text {
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
-    font-family:'ParisineStdClair-Regular';
+    font-family: 'Fira Sans', sans-serif;
     font-size: 28px ! important;
+    font-weight: 20;
 }
+
 
 .btn-book.outline {
     padding: 15px;
@@ -90,8 +74,27 @@ text {
     width: 150px;
     height: 65px;
     font-size: 20px;
-
+    border-radius: 35px ! important;
+    text-align: center;
 
     /*margin: 0 auto;*/
 }
+
+/** DO NOT EDIT BELOW THIS COMMENT */
+.st0{fill:#F4F4F4;stroke:#A8A8A8;stroke-miterlimit:10;}
+.st1{fill:#909091;}
+.st2{fill:#F4F4F4;stroke:#A8A8A8;stroke-width:2;stroke-miterlimit:10;}
+.st3{fill:#909091;stroke:#606060;stroke-width:4;stroke-miterlimit:10;}
+.st4{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+.st5{font-family:'ParisineStdClair-Regular';}
+.st6{font-size:63.2515px;}
+.st7{fill:#CAEAE1;stroke:#FFFFFF;stroke-width:6;stroke-miterlimit:10;}
+.st8{fill:#CAEAE1;}
+.st9{fill:#FFFFFF;stroke:#AFAFAF;stroke-width:5;stroke-miterlimit:10;}
+.table{fill:#FFFFFF;stroke:#AFAFAF;stroke-width:3;stroke-miterlimit:10;}
+.st11{fill:#565656;stroke:#3A3A3A;stroke-width:0.5;stroke-miterlimit:10;}
+.st12{font-size:52px;}
+.selected{fill:#FFFFFF;stroke:#25CACE;stroke-width:7;stroke-miterlimit:10;}
+
+
 
