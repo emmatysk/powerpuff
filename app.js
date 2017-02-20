@@ -33,6 +33,10 @@ var orders = function() {
     orders[dish.orderId].done = false;
   };
 
+  var getTableNumber = function(orderId) {
+      return orders[orderId].order.tableNumber;
+  };
+
   var getAll = function() {
     return orders;
   };
@@ -45,7 +49,8 @@ var orders = function() {
   return {
     addOrder : addOrder,
     getAll : getAll,
-    markDone : markDone
+    markDone : markDone,
+    getTableNumber: getTableNumber
   };
 }(); // instantiate the class immediately
 
@@ -109,12 +114,16 @@ io.on('connection', function(socket) {
   // When someone orders something
   socket.on('order', function(dish) {
     orders.addOrder(dish);
+    tables.setStatus(dish.order.tableNumber, 'waiting');
     io.emit('currentQueue', orders.getAll());
+    io.emit('currentTables', tables.getAll());
   });
 
   socket.on('orderDone', function(orderId) {
     orders.markDone(orderId);
+//    tables.setStatus(orders.getTableNumber(orderId), 'ok');
     io.emit('currentQueue', orders.getAll());
+    io.emit('currentTables', tables.getAll());
   });
 
   socket.on('cancelTable', function(tableId) {
