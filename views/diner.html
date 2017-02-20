@@ -150,18 +150,21 @@
 <!-- END: DO NOT EDIT SVG -->
         </div>
         <div class="col-lg-4">
+            <div id = "test">
           <form>
-              <div class="form-group">
-                <label for="table-number">Table number:</label>
-                <input type="text" class="form-control" id="table-number" :value="selectedTable">
+              <div class="form-group"  width="150px">
+                <label for="table-number"></label>
+                <input type="text" placeholder="Table number" class="form-control" id="table-number" :value="selectedTable">
               </div>
+              <div class ="divider"></div>
             <div class="form-group">
-                <a v-bind:href="'order/'+ selectedTable"class="btn btn-primary">Boka</a>
+                <a v-bind:href="'order/'+ selectedTable"class="btn btn-book btn-lg outline" >Boka</a>
             </div>
             <div class="form-group">
-              <button class="btn btn-default">Avboka</button>
+              <button class="btn btn-avboka btn-lg outline">Avboka</button>
             </div>
           </form>
+            </div>
         </div>
       </div>
     </div>
