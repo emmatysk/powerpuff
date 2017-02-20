@@ -117,8 +117,9 @@ io.on('connection', function(socket) {
     io.emit('currentQueue', orders.getAll());
   });
 
-  socket.on('setStatus', function(tableId, status) {
-    tables.setStatus(tableId, status);
+  socket.on('cancelTable', function(tableId) {
+      tables.setStatus(tableId, 'available');
+      io.emit('currentTables', tables.getAll());
   });
 });
 
