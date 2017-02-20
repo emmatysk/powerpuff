@@ -13,8 +13,6 @@ function getOrderNumber() {
   return "#" + getRandomInt(1, 1000000);
 }
 
-
-
 new Vue({
   el: '#ordering',
   mixins: [sharedVueStuff], // include stuff that goes to both diner and kitchen

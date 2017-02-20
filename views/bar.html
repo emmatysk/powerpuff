@@ -120,8 +120,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
-            <button @click="betala" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
-            <button @click="betala" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
+            <button @click="placeOrder" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
+            <button @click="placeOrder" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
           </div>
         </div>
 
@@ -157,6 +157,8 @@
 
 </div>
 
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/nationPub.js"></script>
 <script src="/js/bar.js"></script>
 </body>
 

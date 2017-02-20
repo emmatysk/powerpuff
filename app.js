@@ -28,8 +28,8 @@ var orders = function() {
   var orders = {};
 
   var addOrder = function(dish) {
-    orders[dish.orderId] ={};
-    orders[dish.orderId].orderItems = dish.orderItems;
+    orders[dish.orderId] = {};
+    orders[dish.orderId].order = dish;
     orders[dish.orderId].done = false;
   };
 
