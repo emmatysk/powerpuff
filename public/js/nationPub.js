@@ -23,6 +23,10 @@ var sharedVueStuff = {
     socket.on('currentQueue', function(data) {
       this.orders = data;
     }.bind(this));
+
+    socket.on('currentTables', function(tables) {
+      this.tables = tables;
+    }.bind(this));
   },
   methods: {
     setStatus: function(table, status) {

@@ -30,7 +30,8 @@ new Vue({
           this.selectedTable = number;
       }
     },
-
-
+    cancelTable: function() {
+      socket.emit('cancelTable', this.selectedTable);
+    }
   }
 });
