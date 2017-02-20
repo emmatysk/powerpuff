@@ -13,6 +13,11 @@ function getOrderNumber() {
 new Vue({
     el: '#vue',
     mixins: [sharedVueStuff], // include stuff that goes to both diner and kitchen
+    created: function() {
+        socket.on('orderAdded', function() {
+            window.location = '/';
+        });
+    },
     data: {
         foodlist: [
             {

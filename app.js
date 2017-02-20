@@ -42,7 +42,8 @@ var orders = function() {
   };
 
   var markDone = function(orderId) {
-    orders[orderId].done = true;
+//    orders[orderId].done = true;
+      console.log('table: ' + orders[orderId].order);
   };
 
   //expose functions
@@ -117,6 +118,7 @@ io.on('connection', function(socket) {
     tables.setStatus(dish.order.tableNumber, 'waiting');
     io.emit('currentQueue', orders.getAll());
     io.emit('currentTables', tables.getAll());
+    io.emit('orderAdded');
   });
 
   socket.on('orderDone', function(orderId) {
