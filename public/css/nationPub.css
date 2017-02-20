@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,600,700,800');
+
 body {
     padding-top: 0px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 200;
 }
 
 .available {
@@ -16,4 +20,67 @@ body {
 
 .critical {
     background-color: #ffd2ca;
+}
+
+#test{
+    width: 180px;
+    border-radius: 5px;
+    border: 0.4px solid #ababab;
+    background-color: #ececec;
+    padding: 1em;
+    position: fixed;
+    top: 13px;
+}
+
+.btn-book {
+    line-height: 70px; /* <- changed this */
+    box-sizing: border-box;
+    height: 70px;
+    width: 150px;
+    background-color:#25CACE;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-size: 30px ! important;
+    font-weight: 200 ! important;
+}
+
+
+.btn-book.outline {
+    padding: 15px;
+    border:2px solid #33c3ce;
+}
+
+.btn-avboka {
+
+    height: 70px;
+    width: 150px;
+    background-color: #fbfbfb;
+    display:inline-block;
+    color:#ffffff;
+    color: #33c3ce;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-size: 30px ! important;
+    font-weight: 200 ! important;
+}
+
+.btn-avboka.outline {
+    padding: 2px;
+    border:2px solid #33c3ce;
+}
+
+.divider{
+    display:inline-block;
+    height:auto;
+}
+
+#table-number {
+    width: 150px;
+    height: 65px;
+    font-size: 20px;
+    border-radius: 35px ! important;
+    text-align: center;
+
+    /*margin: 0 auto;*/
 }
