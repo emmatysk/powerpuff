@@ -1,3 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,600,700,800');
+
+body {
+    padding-top: 0px;
+    font-family: 'Fira Sans', sans-serif !important;
+    font-weight: 100;
+}
 .col-lg-12.row {
   height: 80px;
 }
@@ -10,18 +18,60 @@
 }
 
 #matknapp{
-  background-color: #F6A348;
-}
-#matknapp:hover{
-  background-color: #F58F29;
+    box-sizing: border-box;
+    height: 70px;
+    background-color:#25CACE;
+    color:#ffffff;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-size: 35px ! important;
+    font-weight: 200 ! important;
 }
 
+#food-menu img{
+     height: 7em;
+     width: 7em;
+ }
+
+#drink-menu img{
+    height: 7em;
+    width: 7em;
+}
+
+.menu-buttons {
+    left: 1em;
+}
+
+#matknapp:hover{
+  background-color: #33c4cf;
+}
+
+
+
+.item-group h2 {
+     font-weight: 200 ! important;
+     font-family: 'Fira Sans', sans-serif ! important;
+     font-size: 30px ! important;
+
+     color: #838383;
+ }
+
+.item-group {
+    text-align: center;
+}
+
+
 #dryckesknapp {
-  background-color: #5D8CBA;
+    box-sizing: border-box;
+    height: 70px;
+    background-color: white;
+    color: #25CACE;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-size: 35px ! important;
+    font-weight: 200 ! important;
 }
 
 #dryckesknapp:hover {
-  background-color: #547EA7;
+  background-color: #f7f7f7;
 }
 
 .mat {
@@ -39,6 +89,20 @@
 
 }
 
+.btn-menuitem {
+    border: 1px solid #eaeaea ! important;
+
+    height: 70px;
+    padding: 0px;
+    background-color: #fbfbfb;
+    display:inline-block;
+    color: #0f5a5e;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-size: 25px ! important;
+    font-weight: 200 ! important;
+}
+
+
   .btn #changebutton {
      border: 2px solid;
      border-color: black;
@@ -51,7 +115,7 @@
    }
 
 .btn:hover {
-  background: #ff8c00;
+  background: #f7f7f7;
   text-decoration: none;
 }
 
@@ -63,13 +127,14 @@
 }
 
 #left {
-  border: 10px solid;
+
   border-radius: 10px;
-  border-color: transparent;
-  background-color: lightgrey;
+  padding:0.5em;
+    top: 13px;
+  border: 0.4px solid #ababab;
+  background-color: #ececec;
   height: 1000px;
+  width: 800px;
 }
 
-#changebutton {
 
-}
