@@ -42,8 +42,7 @@ var orders = function() {
   };
 
   var markDone = function(orderId) {
-//    orders[orderId].done = true;
-      console.log('table: ' + orders[orderId].order);
+    orders[orderId].done = true;
   };
 
   //expose functions
