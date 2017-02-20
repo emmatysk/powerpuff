@@ -1,116 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Projekt</title>
-        <meta charset="utf-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/bar.css">
-        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+<head>
+  <title>Projekt</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/bar.css">
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    </head>
+</head>
 
- <body>
+<body>
 
-   <script>
-   $('#changeModal').on('shown.bs.modal', function (event) {
-  var button = $(event.realatedTarget)
-  var recipient = button.data("whatever")
+<script>
+    $('#changeModal').on('shown.bs.modal', function (event) {
+        var button = $(event.realatedTarget)
+        var recipient = button.data("whatever")
 
-  var modal = $(this)
-  modal.find(".modal-title").text("Ändra din order")
-  modal.find(".modal-body input").val(recipient)
-})
+        var modal = $(this)
+        modal.find(".modal-title").text("Ändra din order")
+        modal.find(".modal-body input").val(recipient)
+    })
 </script>
 
 
-      <div id="vue" class="container-fluid ">
-        <div id="left" class="col-lg-8">
-          <div id="padding">
-            <div class="col-lg-12 row">
-                <button id="matknapp" @click="mat" class="col-lg-6 btn" > Mat</button>
-                <button id="dryckesknapp" @click="dryck" class="col-lg-6 btn" > Dryck</button>
-            </div>
-          </div>
-
-            <div class="col-lg-12 row">
-              <button @click="add(item)" v-bind:class="{mat: visaMat, dryck: visaDryck}" class="col-lg-3 btn" v-for="item in currentlist"><h4>{{item.title}}</h4></button>
-            </div>
-
-        </div>
-
-
-     <div id="right" class ="col-lg-4">
-
-       <h3> Din beställning </h3>
-        <div class="col-lg-8 row" v-for="item in orderlist">
-          <a href="#" @click="remove(item)"> <span class="glyphicon glyphicon-remove" style="font-size: 30px;"> </span> </a>
-          <button id="changebutton" @click="change(item)" style="font-size: 20px;" data-whatever="item" data-toggle="modal" data-target="#changeModal"> {{item.title}}  {{item.pris}}kr </button>
-        </div>
-        <div class="col-lg-12 navbar-fixed-bottom" style="margin-right: 10%;" >
-          <div class="col-lg-4 navbar-right">
-      <button @click="betala" class="col-lg-4 btn btn-danger" > <h4> Rensa </h4></button>
-      <button class="col-lg-8 btn btn-success" data-toggle="modal" data-target="#payModal"><h4>Skicka order och betala</h4></button>
+<div id="vue" class="container-fluid ">
+  <div id="left" class="col-lg-8">
+    <div id="padding">
+      <div class="col-lg-12 row">
+        <button id="matknapp" @click="mat" class="col-lg-6 btn" > Mat</button>
+        <button id="dryckesknapp" @click="dryck" class="col-lg-6 btn" > Dryck</button>
+      </div>
     </div>
+
+    <div class="col-lg-12 row">
+      <button @click="add(item)" v-bind:class="{mat: visaMat, dryck: visaDryck}" class="col-lg-3 btn" v-for="item in currentlist"><h4>{{item.title}}</h4></button>
+    </div>
+
   </div>
 
-      <!-- PayModal -->
-      <div class="modal fade" id="payModal" role="dialog">
-        <div class="modal-dialog">
 
-          <!-- PayModal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Din order</h4>
-            </div>
-            <div class="modal-body">
-            <p v-for="item in orderlist"> {{item.title}} {{item.pris}}kr </p>
-              <h3>Total: {{totalprice}}kr</h3>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
-              <button @click="betala" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
-                <button @click="betala" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
-            </div>
-          </div>
+  <div id="right" class ="col-lg-4">
 
-        </div>
+    <h3> Din beställning </h3>
+    <div class="col-lg-8 row" v-for="item in orderlist">
+      <a href="#" @click="remove(item)"> <span class="glyphicon glyphicon-remove" style="font-size: 30px;"> </span> </a>
+      <button id="changebutton" @click="change(item)" style="font-size: 20px;" data-whatever="item" data-toggle="modal" data-target="#changeModal"> {{item.title}}  {{item.pris}}kr </button>
+    </div>
+    <div class="col-lg-12 navbar-fixed-bottom" style="margin-right: 10%;" >
+      <div class="col-lg-4 navbar-right">
+        <button @click="betala" class="col-lg-4 btn btn-danger" > <h4> Rensa </h4></button>
+        <button class="col-lg-8 btn btn-success" data-toggle="modal" data-target="#payModal"><h4>Skicka order och betala</h4></button>
       </div>
-
-      <!-- ChangeModal -->
-      <div class="modal fade" id="changeModal" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- ChangeModal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">New message</h4>
-            </div>
-            <div class="modal-body">
-            <div v-for="item in hej">
-            <a href="#" @click="removeingrident(item)"> <span class="glyphicon glyphicon-remove" style="font-size: 15px;"> </span>  </a>
-                <p style="font-size: 15px">{{item}}</p>
-          </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
-                <button @click="change" type="button" class="btn btn-success" data-dismiss="modal">Ändra</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-     </div>
-
     </div>
 
-      <script src="/js/bar.js"></script>
-    </body>
+    <!-- PayModal -->
+    <div class="modal fade" id="payModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- PayModal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Din order</h4>
+          </div>
+          <div class="modal-body">
+            <p v-for="item in orderlist"> {{item.title}} {{item.pris}}kr </p>
+            <h3>Total: {{totalprice}}kr</h3>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
+            <button @click="betala" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
+            <button @click="betala" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ChangeModal -->
+    <div class="modal fade" id="changeModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- ChangeModal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">New message</h4>
+          </div>
+          <div class="modal-body">
+            <div v-for="item in hej">
+              <a href="#" @click="removeingrident(item)"> <span class="glyphicon glyphicon-remove" style="font-size: 15px;"> </span>  </a>
+              <p style="font-size: 15px">{{item}}</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
+            <button @click="change" type="button" class="btn btn-success" data-dismiss="modal">Ändra</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="/js/bar.js"></script>
+</body>
 
 </html>
