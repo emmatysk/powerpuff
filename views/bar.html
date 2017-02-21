@@ -31,8 +31,8 @@
   <div id="left" class="col-lg-8">
     <div id="padding">
       <div class="col-lg-12 row menu-buttons">
-        <button id="matknapp" @click="mat" class="col-lg-6 btn" > Mat</button>
-        <button id="dryckesknapp" @click="dryck" class="col-lg-6 btn" > Dryck</button>
+        <button id="matknapp" @click="selectCategory('foods')" class="col-lg-6 btn" > Mat</button>
+        <button id="dryckesknapp" @click="selectCategory('drinks')" class="col-lg-6 btn" > Dryck</button>
       </div>
     </div>
 
@@ -68,7 +68,7 @@
     </div>
     <div class="col-lg-12 navbar-fixed-bottom" style="margin-right: 10%;" >
       <div class="col-lg-4 navbar-right">
-        <button @click="betala" class="col-lg-4 btn btn-danger" > <h4> Rensa </h4></button>
+        <button @click="clear" class="col-lg-4 btn btn-danger" > <h4> Rensa </h4></button>
         <button class="col-lg-8 btn btn-success" data-toggle="modal" data-target="#payModal"><h4>Skicka order och betala</h4></button>
       </div>
     </div>
@@ -89,8 +89,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
-            <button @click="placeOrder" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
-            <button @click="placeOrder" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
+            <button @click="pay" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
+            <button @click="pay" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
           </div>
         </div>
 

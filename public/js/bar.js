@@ -36,11 +36,8 @@ new Vue({
         hej: []
     },
     methods: {
-        mat: function() {
-            this.group = 'foods'
-        },
-        dryck: function() {
-            this.group = 'drinks'
+        selectCategory: function(category) {
+            this.group = category;
         },
         add: function(item) {
             var newItem = Vue.util.extend({}, item)
@@ -50,9 +47,6 @@ new Vue({
             var index = this.orderlist.indexOf(item)
             this.orderlist.splice(index, 1)
         },
-        betala: function() {
-            this.orderlist = []
-        },
         change: function(e) {
             this.hej = e.ingredienser
         },
@@ -60,7 +54,10 @@ new Vue({
             var index = this.hej.indexOf(item)
             this.hej.splice(index, 1)
         },
-        placeOrder: function() {
+        clear: function() {
+            this.orderlist = [];
+        },
+        pay: function() {
             var tableNumber = parseInt(window.location.pathname.split('/')[2]);
 
             var items = [];
@@ -80,7 +77,7 @@ new Vue({
         totalprice: function() {
             var tot = 0;
             for(var i = 0; i < this.orderlist.length; i++) {
-                tot += this.orderlist[i].pris;
+                tot += this.orderlist[i].price;
             }
             return tot;
         },
