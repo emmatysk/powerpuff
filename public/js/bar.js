@@ -19,248 +19,20 @@ new Vue({
         });
     },
     data: {
-        foodlist: [
-            {
-                "title": "Alex Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["GlutenfrittBröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Jakob Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Senap", "ketchup", "lök", "Sallad", "Ost", "Hallomi"],
-                "changed": []
-            },
-            {
-                "title": "Nicklas Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Emma Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Erik Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Hamburgartallrik",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Kebabtallrik",
-                "kCal": "650",
-                "gluten": "Nej",
-                "lactose": "Ja",
-                "grupp": "Mat",
-                "pris": 60,
-                "ingredienser": ["Kebab", "Pommes", "Sallad", "Vitlökssås"]
-            },
-            {
-                "title": "Pulled Pork",
-                "kCal": "550",
-                "gluten": "Ja",
-                "lactose": "Ja",
-                "grupp": "Mat",
-                "pris": 75,
-                "ingredienser": ["Fläsk", "Potatis", "BBQ-sås", "Sallad"]
-            },
-            {
-                "title": "Fisk",
-                "kCal": "1000",
-                "gluten": "Ja",
-                "lactose": "Ja",
-                "grupp": "onstigt",
-                "pris": 50,
-                "ingredienser": ["Fisk", "Potatis", "Fisk-sås", "Sallad"]
-            },
-            {
-                "title": "Veggie",
-                "kCal": "1",
-                "gluten": "Ja",
-                "lactose": "Ja",
-                "grupp": "Något konstigt",
-                "pris": 150,
-                "ingredienser": ["Sallad"]
-            }],
-
-        drinklist: [
-            {
-                "title": "Coca Cola",
-                "grupp": "Läskeblask",
-                "pris": 150,
-                "ingredienser": ["SOCKER"]
-            },
-            {
-                "title": "Coca Cola Zero",
-                "grupp": "Läskeblask",
-                "pris": 150,
-                "ingredienser": ["SOCKERFRI"]
-            },
-            {
-                "title": "Fanta Zero",
-                "grupp": "Läskeblask",
-                "pris": 110,
-                "ingredienser": ["Sockerfri"]
-            },
-            {
-                "title": "Fanta",
-                "grupp": "Läskeblask",
-                "pris": 110,
-                "ingredienser": ["Socker"]
-            },
-            {
-                "title": "Sprite",
-                "grupp": "Läskeblask",
-                "pris": 120,
-                "ingredienser": ["Socker"]
-            }],
-
-        currentlist: [
-            {
-                "title": "Alex Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["GlutenfrittBröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Jakob Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Senap", "ketchup", "lök", "Sallad", "Ost", "Hallomi"],
-                "changed": []
-            },
-            {
-                "title": "Nicklas Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Emma Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Erik Special",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Hamburgartallrik",
-                "kCal": "800",
-                "gluten": "Ja",
-                "lactose": "Nej",
-                "grupp": "Mat",
-                "pris": 65,
-                "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
-                "changed": []
-            },
-            {
-                "title": "Kebabtallrik",
-                "kCal": "650",
-                "gluten": "Nej",
-                "lactose": "Ja",
-                "grupp": "Mat",
-                "pris": 60,
-                "ingredienser": ["Kebab", "Pommes", "Sallad", "Vitlökssås"]
-            },
-            {
-                "title": "Pulled Pork",
-                "kCal": "550",
-                "gluten": "Ja",
-                "lactose": "Ja",
-                "grupp": "Mat",
-                "pris": 75,
-                "ingredienser": ["Fläsk", "Potatis", "BBQ-sås", "Sallad"]
-            },
-            {
-                "title": "Fisk",
-                "kCal": "1000",
-                "gluten": "Ja",
-                "lactose": "Ja",
-                "grupp": "onstigt",
-                "pris": 50,
-                "ingredienser": ["Fisk", "Potatis", "Fisk-sås", "Sallad"]
-            },
-            {
-                "title": "Veggie",
-                "kCal": "1",
-                "gluten": "Ja",
-                "lactose": "Ja",
-                "grupp": "Något konstigt",
-                "pris": 150,
-                "ingredienser": ["Sallad"]
-            }],
-
+        currentlist: 'foods',
         orderlist: [],
         hej: [],
         visaMat: true,
         visaDryck: false
     },
-
     methods: {
         mat: function() {
-            this.currentlist = this.foodlist
+            this.currentlist = 'foods'
             this.visaDryck = false
             this.visaMat = true
         },
         dryck: function() {
-            this.currentlist = this.drinklist
+            this.currentlist = 'drinks'
             this.visaDryck = true
             this.visaMat = false
         },
@@ -298,7 +70,6 @@ new Vue({
             socket.emit('order', {orderId: getOrderNumber(), order: order});
         }
     },
-
     computed: {
         totalprice: function() {
             var tot = 0;
@@ -306,6 +77,9 @@ new Vue({
                 tot += this.orderlist[i].pris;
             }
             return tot;
+        },
+        items: function() {
+            return this.menu[this.currentlist];
         }
     }
 })

@@ -42,7 +42,7 @@
         <img src="/images/hamburger.png">
         <h2>Hamburgare<span id="burger-img"></span></h2>
         <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in currentlist" type="button" class="btn btn-menuitem">{{item.title}}</button>
+          <button @click="add(item)" v-for="item in items" type="button" class="btn btn-menuitem">{{item.title}}</button>
         </div>
       </div>
 
@@ -50,14 +50,14 @@
         <img src="/images/food.png">
         <h2>Pasta</h2>
         <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in currentlist" type="button" class="btn btn-menuitem">{{item.title}}</button>
+          <button @click="add(item)" v-for="item in items" type="button" class="btn btn-menuitem">{{item.title}}</button>
         </div>
       </div>
       <div class="col-lg-4">
         <img src="/images/sallad.png">
         <h2>Sallad</h2>
         <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in currentlist" type="button" class="btn btn-menuitem">{{item.title}}</button>
+          <button @click="add(item)" v-for="item in items" type="button" class="btn btn-menuitem">{{item.title}}</button>
         </div>
       </div>
     </div>
@@ -68,21 +68,21 @@
         <img src="/images/Beer-icon.png">
         <h2>Öl</h2>
         <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in currentlist" type="button" class="btn btn-menuitem">{{item.title}}</button>
+          <button @click="add(item)" v-for="item in items" type="button" class="btn btn-menuitem">{{item.title}}</button>
         </div>
       </div>
       <div class="col-lg-4">
         <img src="/images/wine.png">
         <h2>Vin</h2>
         <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in currentlist" type="button" class="btn btn-menuitem">{{item.title}}</button>
+          <button @click="add(item)" v-for="item in items" type="button" class="btn btn-menuitem">{{item.title}}</button>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="btn-group-vertical">
           <img src="/images/coffee3.png">
           <h2>Kaffe</h2>
-          <button @click="add(item)" v-for="item in currentlist" type="button" class="btn btn-menuitem">{{item.title}}</button>
+          <button @click="add(item)" v-for="item in items" type="button" class="btn btn-menuitem">{{item.title}}</button>
         </div>
       </div>
     </div>

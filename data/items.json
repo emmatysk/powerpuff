@@ -1,191 +1,132 @@
 {
   "foods": [
     {
-      "order": 1,
-      "label": "Hamburgare",
-      "price": 65,
-      "details": [
-        { "extra": "Lök",
-          "price": 0
-        }
-      ]
+      "title": "Alex Special",
+      "kCal": "800",
+      "gluten": "Ja",
+      "lactose": "Nej",
+      "grupp": "Mat",
+      "pris": 65,
+      "ingredienser": ["GlutenfrittBröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+      "changed": []
     },
     {
-      "order": 2,
-      "label": "Ostburgare",
-      "price": 70,
-      "details": [
-        { "extra": "Lök",
-          "price": 0
-        },
-        { "extra": "Ost",
-          "price": 10
-        }
-      ]
+      "title": "Jakob Special",
+      "kCal": "800",
+      "gluten": "Ja",
+      "lactose": "Nej",
+      "grupp": "Mat",
+      "pris": 65,
+      "ingredienser": ["Bröd", "Gurka", "Senap", "ketchup", "lök", "Sallad", "Ost", "Hallomi"],
+      "changed": []
     },
     {
-      "order": 3,
-      "label": "Veganburgare",
-      "price": 65,
-      "details": [
-        { "extra": "Lök",
-          "price": 0
-        },
-        { "extra": "Tryffel",
-          "price": 20
-        },
-        { "extra": "Bacon",
-          "price": 10
-        }
-      ]
+      "title": "Niklas Special",
+      "kCal": "800",
+      "gluten": "Ja",
+      "lactose": "Nej",
+      "grupp": "Mat",
+      "pris": 65,
+      "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+      "changed": []
+    },
+    {
+      "title": "Emma Special",
+      "kCal": "800",
+      "gluten": "Ja",
+      "lactose": "Nej",
+      "grupp": "Mat",
+      "pris": 65,
+      "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+      "changed": []
+    },
+    {
+      "title": "Erik Special",
+      "kCal": "800",
+      "gluten": "Ja",
+      "lactose": "Nej",
+      "grupp": "Mat",
+      "pris": 65,
+      "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+      "changed": []
+    },
+    {
+      "title": "Hamburgartallrik",
+      "kCal": "800",
+      "gluten": "Ja",
+      "lactose": "Nej",
+      "grupp": "Mat",
+      "pris": 65,
+      "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
+      "changed": []
+    },
+    {
+      "title": "Kebabtallrik",
+      "kCal": "650",
+      "gluten": "Nej",
+      "lactose": "Ja",
+      "grupp": "Mat",
+      "pris": 60,
+      "ingredienser": ["Kebab", "Pommes", "Sallad", "Vitlökssås"]
+    },
+    {
+      "title": "Pulled Pork",
+      "kCal": "550",
+      "gluten": "Ja",
+      "lactose": "Ja",
+      "grupp": "Mat",
+      "pris": 75,
+      "ingredienser": ["Fläsk", "Potatis", "BBQ-sås", "Sallad"]
+    },
+    {
+      "title": "Fisk",
+      "kCal": "1000",
+      "gluten": "Ja",
+      "lactose": "Ja",
+      "grupp": "onstigt",
+      "pris": 50,
+      "ingredienser": ["Fisk", "Potatis", "Fisk-sås", "Sallad"]
+    },
+    {
+      "title": "Veggie",
+      "kCal": "1",
+      "gluten": "Ja",
+      "lactose": "Ja",
+      "grupp": "Något konstigt",
+      "pris": 150,
+      "ingredienser": ["Sallad"]
     }
   ],
   "drinks": [
-  {
-    "order": 1,
-    "label": "Fullers India Pale Ale",
-    "size": 50,
-    "price": 65
-  },
-  {
-    "order": 2,
-    "label": "Fullers ESB",
-    "size": 50,
-    "price": 65
-  },
-  {
-    "order": 3,
-    "label": "Brew Dog 5 a.m",
-    "size": 33,
-    "price": 65
-  },
-  {
-    "order": 4,
-    "label": "Duvel",
-    "size": 33,
-    "price": 65
-  },
-  {
-    "order": 5,
-    "label": "Wisby Oak Porter",
-    "size": 33,
-    "price": 65
-  },
-  {
-    "order": 6,
-    "label": "Wisby Klosteröl",
-    "size": 33,
-    "price": 65
-  },
-  {
-    "order": 7,
-    "label": "Baron Trenck",
-    "size": 50,
-    "price": 65
-  },
-  {
-    "order": 8,
-    "label": "Adnams Bitter",
-    "size": 50,
-    "price": 65
-  },
-  {
-    "order": 9,
-    "label": "Innis & Gunn Orginal",
-    "size": 33,
-    "price": 65
-  },
-  {
-    "order": 10,
-    "label": "Innis & Gunn Toasted Oak IPA",
-    "size": 33,
-    "price": 65
-  },
-  {
-    "order": 11,
-    "label": "Liberty Ale",
-    "size": 33,
-    "price": 65
-  },
-  {
-    "order": 12,
-    "label": "Anchor Steam",
-    "size": 33,
-    "price": 65
-  },
-  {
-    "order": 13,
-    "label": "Nanny State",
-    "size": 33,
-    "price": 65,
-    "details": [
-      {
-        "non-alcoholic":true
-      }
-    ]
-  },
-  {
-    "order": 14,
-    "label": "Störtebeker",
-    "size": 33,
-    "price": 65,
-    "details": [
-      {
-        "non-alcoholic":true
-      }
-    ]
-  },
-  {
-    "order": 15,
-    "label": "Zatec",
-    "size": 33,
-    "price": 65,
-    "details": [
-      {
-        "non-alcoholic":true,
-        "gluten-free":true
-      }
-    ]
-  },
-  {
-    "order": 16,
-    "label": "Green’s Blond Ale",
-    "size": 33,
-    "price": 50,
-    "details": [
-      {
-        "non-alcoholic":true,
-        "gluten-free":true
-      }
-    ]
-  }
-],
-  "sideorders": [
     {
-      "order": 1,
-      "label": "Strips",
-      "price": 20,
-      "details": [
-        { "extra": "Smält ost",
-          "price": 10
-        },
-        { "extra": "Stekt lök",
-          "price": 10
-        }
-      ]
-  },
-      {
-      "order": 1,
-      "label": "Nachos",
-      "price": 30,
-      "details": [
-        { "extra": "Smält ost",
-          "price": 10
-        },
-        { "extra": "Salsa",
-          "price": 10
-        }
-      ]
-  }
-]
+      "title": "Coca Cola",
+      "grupp": "Läskeblask",
+      "pris": 150,
+      "ingredienser": ["SOCKER"]
+    },
+    {
+      "title": "Coca Cola Zero",
+      "grupp": "Läskeblask",
+      "pris": 150,
+      "ingredienser": ["SOCKERFRI"]
+    },
+    {
+      "title": "Fanta Zero",
+      "grupp": "Läskeblask",
+      "pris": 110,
+      "ingredienser": ["Sockerfri"]
+    },
+    {
+      "title": "Fanta",
+      "grupp": "Läskeblask",
+      "pris": 110,
+      "ingredienser": ["Socker"]
+    },
+    {
+      "title": "Sprite",
+      "grupp": "Läskeblask",
+      "pris": 120,
+      "ingredienser": ["Socker"]
+    }
+  ]
 }

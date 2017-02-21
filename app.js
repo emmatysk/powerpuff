@@ -18,7 +18,7 @@ var lang = "sv";
 // get the JSON objects for the dictated language. Wonder if functions take arguments? ;-)
 var getLabelsAndMenu = function() {
   var ui = require("./data/"+ lang +"/ui.json");
-  var menu = require("./data/"+ lang +"/menu.json");
+  var menu = require("./data/items.json");
   var tables = require("./data/tables.json");
   return {uiLabels: ui, menu: menu, tables: tables};
 };
