@@ -20,6 +20,18 @@ new Vue({
     },
     data: {
         group: 'foods',
+        categories: {
+            food: [
+                { name: 'burger', title: 'Hamburgare' },
+                { name: 'pasta',   title: 'Pasta' },
+                { name: 'sallad',  title: 'Sallad' },
+            ],
+            drinks: [
+                { name: 'beer', title: 'Öl' },
+                { name: 'wine',   title: 'Vin' },
+                { name: 'coffee',  title: 'Kaffe' },
+            ]
+        },
         orderlist: [],
         hej: []
     },

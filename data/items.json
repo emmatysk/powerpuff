@@ -5,8 +5,8 @@
       "kCal": "800",
       "gluten": "Ja",
       "lactose": "Nej",
-      "grupp": "Mat",
-      "pris": 65,
+      "type": "burger",
+      "price": 65,
       "ingredienser": ["GlutenfrittBröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
       "changed": []
     },
@@ -15,8 +15,8 @@
       "kCal": "800",
       "gluten": "Ja",
       "lactose": "Nej",
-      "grupp": "Mat",
-      "pris": 65,
+      "type": "pasta",
+      "price": 65,
       "ingredienser": ["Bröd", "Gurka", "Senap", "ketchup", "lök", "Sallad", "Ost", "Hallomi"],
       "changed": []
     },
@@ -25,8 +25,8 @@
       "kCal": "800",
       "gluten": "Ja",
       "lactose": "Nej",
-      "grupp": "Mat",
-      "pris": 65,
+      "type": "burger",
+      "price": 65,
       "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
       "changed": []
     },
@@ -35,8 +35,8 @@
       "kCal": "800",
       "gluten": "Ja",
       "lactose": "Nej",
-      "grupp": "Mat",
-      "pris": 65,
+      "type": "burger",
+      "price": 65,
       "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
       "changed": []
     },
@@ -45,8 +45,8 @@
       "kCal": "800",
       "gluten": "Ja",
       "lactose": "Nej",
-      "grupp": "Mat",
-      "pris": 65,
+      "type": "sallad",
+      "price": 65,
       "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
       "changed": []
     },
@@ -55,8 +55,8 @@
       "kCal": "800",
       "gluten": "Ja",
       "lactose": "Nej",
-      "grupp": "Mat",
-      "pris": 65,
+      "type": "burger",
+      "price": 65,
       "ingredienser": ["Bröd", "Gurka", "Bacon", "ketchup", "lök", "Sallad", "Ost", "Kyckling", "KÖTT", "Mer kött"],
       "changed": []
     },
@@ -65,8 +65,8 @@
       "kCal": "650",
       "gluten": "Nej",
       "lactose": "Ja",
-      "grupp": "Mat",
-      "pris": 60,
+      "type": "burger",
+      "price": 60,
       "ingredienser": ["Kebab", "Pommes", "Sallad", "Vitlökssås"]
     },
     {
@@ -74,8 +74,8 @@
       "kCal": "550",
       "gluten": "Ja",
       "lactose": "Ja",
-      "grupp": "Mat",
-      "pris": 75,
+      "type": "pasta",
+      "price": 75,
       "ingredienser": ["Fläsk", "Potatis", "BBQ-sås", "Sallad"]
     },
     {
@@ -83,8 +83,8 @@
       "kCal": "1000",
       "gluten": "Ja",
       "lactose": "Ja",
-      "grupp": "onstigt",
-      "pris": 50,
+      "type": "pasta",
+      "price": 50,
       "ingredienser": ["Fisk", "Potatis", "Fisk-sås", "Sallad"]
     },
     {
@@ -92,40 +92,40 @@
       "kCal": "1",
       "gluten": "Ja",
       "lactose": "Ja",
-      "grupp": "Något konstigt",
-      "pris": 150,
+      "type": "sallad",
+      "price": 150,
       "ingredienser": ["Sallad"]
     }
   ],
   "drinks": [
     {
       "title": "Coca Cola",
-      "grupp": "Läskeblask",
-      "pris": 150,
+      "type": "beer",
+      "price": 150,
       "ingredienser": ["SOCKER"]
     },
     {
       "title": "Coca Cola Zero",
-      "grupp": "Läskeblask",
-      "pris": 150,
+      "type": "beer",
+      "price": 150,
       "ingredienser": ["SOCKERFRI"]
     },
     {
       "title": "Fanta Zero",
-      "grupp": "Läskeblask",
-      "pris": 110,
+      "type": "wine",
+      "price": 110,
       "ingredienser": ["Sockerfri"]
     },
     {
       "title": "Fanta",
-      "grupp": "Läskeblask",
-      "pris": 110,
+      "type": "wine",
+      "price": 110,
       "ingredienser": ["Socker"]
     },
     {
       "title": "Sprite",
-      "grupp": "Läskeblask",
-      "pris": 120,
+      "type": "coffee",
+      "price": 120,
       "ingredienser": ["Socker"]
     }
   ]
