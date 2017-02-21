@@ -2,8 +2,8 @@
 
 body {
     padding-top: 0px;
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 200;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-weight: 100 ! important;
 }
 
 .available {
