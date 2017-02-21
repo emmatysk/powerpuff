@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div class="row item-group" id="food-menu" v-if="visaMat">
+    <div class="row item-group" id="food-menu" v-if="showFood">
       <div class="col-lg-4">
         <img src="/images/hamburger.png">
         <h2>Hamburgare<span id="burger-img"></span></h2>
@@ -63,7 +63,7 @@
     </div>
 
 
-    <div class="row menu-buttons item-group" id="drink-menu" v-if="visaDryck">
+    <div class="row menu-buttons item-group" id="drink-menu" v-if="showDrinks">
       <div class="col-lg-4 item-group">
         <img src="/images/Beer-icon.png">
         <h2>Öl</h2>

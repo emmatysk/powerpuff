@@ -19,22 +19,16 @@ new Vue({
         });
     },
     data: {
-        currentlist: 'foods',
+        group: 'foods',
         orderlist: [],
-        hej: [],
-        visaMat: true,
-        visaDryck: false
+        hej: []
     },
     methods: {
         mat: function() {
-            this.currentlist = 'foods'
-            this.visaDryck = false
-            this.visaMat = true
+            this.group = 'foods'
         },
         dryck: function() {
-            this.currentlist = 'drinks'
-            this.visaDryck = true
-            this.visaMat = false
+            this.group = 'drinks'
         },
         add: function(item) {
             var newItem = Vue.util.extend({}, item)
@@ -79,7 +73,13 @@ new Vue({
             return tot;
         },
         items: function() {
-            return this.menu[this.currentlist];
+            return this.menu[this.group];
+        },
+        showFood: function() {
+            return this.group == 'foods';
+        },
+        showDrinks: function() {
+            return this.group == 'drinks';
         }
     }
 })
