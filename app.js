@@ -121,7 +121,7 @@ io.on('connection', function(socket) {
     tables.startTimer(dish.order.tableNumber);
     setTimeout(function() {
         io.emit('tableCritical', dish.order.tableNumber);
-    }, 30000);
+    }, 10000);
     io.emit('currentQueue', orders.getAll());
     io.emit('currentTables', tables.getAll());
     io.emit('orderAdded');

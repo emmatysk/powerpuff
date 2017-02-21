@@ -9,7 +9,11 @@ new Vue({
     },
     created: function() {
         socket.on('tableCritical', function(tableNumber) {
-            this.tables[parseInt(tableNumber)-1].status = "critical";
+            var table = this.tables[parseInt(tableNumber)-1];
+
+            if (table.status == 'waiting') {
+                table.status = 'critical';
+            }
         }.bind(this));
     },
     methods: {
@@ -28,7 +32,7 @@ new Vue({
             var table = this.tables[number - 1];
             var d = new Date();
             var diff = (d.getTime() - table.timer) / 1000;
-            if (table.status == 'waiting' && diff > 30) {
+            if (table.status == 'waiting' && diff > 10) {
                 return 'critical'
             }
             else {
