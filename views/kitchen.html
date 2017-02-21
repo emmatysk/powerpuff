@@ -12,7 +12,7 @@
     <h1>{{ uiLabels.ordersInQueue }}</h1>
     <ol>
       <li v-for="(orderItem, orderId) in orders" v-if="!orderItem.done">
-        {{ orderId }} (Table #{{ orderItem.order.order.tableNumber }})
+        {{ orderId }} <span v-if="orderItem.order.order.tableNumber">(Table: #{{ orderItem.order.order.tableNumber }})</span>
         <ul>
           <li v-for="item in orderItem.order.order.items">
             {{ item }}
@@ -26,7 +26,7 @@
         <h1>{{ uiLabels.ordersFinished }}</h1>
     <ol>
       <li v-for="(orderItem, orderId) in orders" v-if="orderItem.done">
-        {{ orderId }} (Table #{{ orderItem.order.order.tableNumber }})
+        {{ orderId }} <span v-if="orderItem.order.order.tableNumber">(Table: #{{ orderItem.order.order.tableNumber }})</span>
         <ul>
           <li v-for="item in orderItem.order.order.items">
             {{ item }}

@@ -117,11 +117,15 @@ io.on('connection', function(socket) {
   // When someone orders something
   socket.on('order', function(dish) {
     orders.addOrder(dish);
-    tables.setStatus(dish.order.tableNumber, 'waiting');
-    tables.startTimer(dish.order.tableNumber);
-    setTimeout(function() {
-        io.emit('tableCritical', dish.order.tableNumber);
-    }, 10000);
+
+    if (dish.order.tableNumber && dish.order.tableNumber != 'bar') {
+        tables.setStatus(dish.order.tableNumber, 'waiting');
+        tables.startTimer(dish.order.tableNumber);
+        setTimeout(function () {
+            io.emit('tableCritical', dish.order.tableNumber);
+        }, 10000);
+    }
+
     io.emit('currentQueue', orders.getAll());
     io.emit('currentTables', tables.getAll());
     io.emit('orderAdded');
