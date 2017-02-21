@@ -34,7 +34,7 @@ var orders = function() {
   };
 
   var getTableNumber = function(orderId) {
-      return orders[orderId].order.tableNumber;
+      return orders[orderId].order.order.tableNumber;
   };
 
   var getAll = function() {
@@ -129,7 +129,7 @@ io.on('connection', function(socket) {
 
   socket.on('orderDone', function(orderId) {
     orders.markDone(orderId);
-//    tables.setStatus(orders.getTableNumber(orderId), 'ok');
+    tables.setStatus(orders.getTableNumber(orderId), 'ok');
     io.emit('currentQueue', orders.getAll());
     io.emit('currentTables', tables.getAll());
   });
