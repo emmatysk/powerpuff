@@ -34,7 +34,7 @@
   <g id="Lager_10">
   </g>
 </g>
-<g id="table-14" @click="selectTable('14')" :class="tables[13].status">
+<g id="table-14" @click="selectTable('14')" :class="getTableStatus(14)">
   <g>
     <path class="table" d="M468.6,982.7H303.9    c-8.5,0-15.4-6.6-15.4-14.7v-75.8c0-8.1,7-14.7,15.4-14.7h164.7c8.5,0,15.4,6.6,15.4,14.7v75.8C484,976,477.1,982.7,468.6,982.7z" :class="{selected: selectedTable == '14'}"/>
     <g>
@@ -42,7 +42,7 @@
     </g>
   </g>
 </g>
-<g id="table-13" @click="selectTable('13')" :class="tables[12].status">
+<g id="table-13" @click="selectTable('13')" :class="getTableStatus(13)">
   <g>
     <path class="table" d="M236.6,982.7H71.9    c-8.5,0-15.4-6.6-15.4-14.7v-75.8c0-8.1,7-14.7,15.4-14.7h164.7c8.5,0,15.4,6.6,15.4,14.7V968C252,976.1,245,982.7,236.6,982.7z" :class="{selected: selectedTable == '13'}"/>
     <g>
@@ -50,7 +50,7 @@
     </g>
   </g>
 </g>
-<g id="table-12" @click="selectTable('12')" :class="tables[11].status">
+<g id="table-12" @click="selectTable('12')" :class="getTableStatus(12)">
   <g>
     <path class="table" d="M851.3,653.7l0.5,157.2    c0,8.1-6.9,14.8-15.4,14.8l-79.4,0.2c-8.5,0-15.5-6.6-15.5-14.7L740.9,654c0-8.1,6.9-14.8,15.4-14.8l79.4-0.2    C844.3,638.9,851.2,645.6,851.3,653.7z" :class="{selected: selectedTable == '12'}"/>
     <g>
@@ -58,7 +58,7 @@
     </g>
   </g>
 </g>
-<g id="table-11" @click="selectTable('11')" :class="tables[10].status">
+<g id="table-11" @click="selectTable('11')" :class="getTableStatus(11)">
   <g>
     <path class="table" d="M168.5,651.4l0.5,157.2    c0,8.1-6.9,14.8-15.4,14.8l-79.4,0.2c-8.5,0-15.5-6.6-15.5-14.7l-0.5-157.2c0-8.1,6.9-14.8,15.4-14.8l79.4-0.2    C161.5,636.7,168.5,643.3,168.5,651.4z" :class="{selected: selectedTable == '11'}"/>
     <g>
@@ -66,7 +66,7 @@
     </g>
   </g>
 </g>
-<g id="table-10" @click="selectTable('10')" :class="tables[9].status">
+<g id="table-10" @click="selectTable('10')" :class="getTableStatus(10)">
   <g>
     <path class="table" d="M851.7,439.9l0.5,157.2    c0,8.1-6.9,14.8-15.4,14.8l-79.4,0.2c-8.5,0-15.5-6.6-15.5-14.7l-0.5-157.2c0-8.1,6.9-14.8,15.4-14.8l79.4-0.2    C844.7,425.2,851.7,431.8,851.7,439.9z" :class="{selected: selectedTable == '10'}"/>
     <g>
@@ -74,7 +74,7 @@
     </g>
   </g>
 </g>
-<g id="table-9" @click="selectTable('9')" :class="tables[8].status">
+<g id="table-9" @click="selectTable('9')" :class="getTableStatus(9)">
   <g>
     <path class="table" d="M562.1,653.3H397.4    c-8.5,0-15.4-6.6-15.4-14.7v-75.8c0-8.1,7-14.7,15.4-14.7h164.7c8.5,0,15.4,6.6,15.4,14.7v75.8    C577.5,646.7,570.6,653.3,562.1,653.3z" :class="{selected: selectedTable == '9'}"/>
     <g>
@@ -82,7 +82,7 @@
     </g>
   </g>
 </g>
-<g id="table-8" @click="selectTable('8')" :class="tables[7].status">
+<g id="table-8" @click="selectTable('8')" :class="getTableStatus(8)">
   <g>
     <path class="table" d="M168.1,438.4l0.5,157.2    c0,8.1-6.9,14.8-15.4,14.8l-79.4,0.2c-8.5,0-15.5-6.6-15.5-14.7l-0.5-157.2c0-8.1,6.9-14.8,15.4-14.8l79.4-0.2    C161.1,423.7,168.1,430.3,168.1,438.4z" :class="{selected: selectedTable == '8'}"/>
     <g>
@@ -90,7 +90,7 @@
     </g>
   </g>
 </g>
-<g id="table-7" @click="selectTable('7')" :class="tables[6].status">
+<g id="table-7" @click="selectTable('7')" :class="getTableStatus(7)">
   <g>
     <path class="table" d="M834.2,369.6H669.6    c-8.5,0-15.4-6.6-15.4-14.7V279c0-8.1,7-14.7,15.4-14.7h164.7c8.5,0,15.4,6.6,15.4,14.7v75.8C849.7,363,842.7,369.6,834.2,369.6z" :class="{selected: selectedTable == '7'}"/>
     <g>
@@ -98,7 +98,7 @@
     </g>
   </g>
 </g>
-<g id="table-6" @click="selectTable('6')" :class="tables[5].status">
+<g id="table-6" @click="selectTable('6')" :class="getTableStatus(6)">
   <g>
     <path class="table" d="M586.7,283.3l0.5,157.2    c0,8.1-6.9,14.8-15.4,14.8l-79.4,0.2c-8.5,0-15.5-6.6-15.5-14.7l-0.5-157.2c0-8.1,6.9-14.8,15.4-14.8l79.4-0.2    C579.7,268.6,586.7,275.2,586.7,283.3z" :class="{selected: selectedTable == '6'}"/>
     <g>
@@ -106,7 +106,7 @@
     </g>
   </g>
 </g>
-<g id="table-5" @click="selectTable('5')" :class="tables[4].status">
+<g id="table-5" @click="selectTable('5')" :class="getTableStatus(5)">
   <g>
     <path class="table" d="M427,282.5l0.5,157.2    c0,8.1-6.9,14.8-15.4,14.8l-79.4,0.2c-8.5,0-15.5-6.6-15.5-14.7l-0.5-157.2c0-8.1,6.9-14.8,15.4-14.8l79.4-0.2    C420,267.7,427,274.4,427,282.5z" :class="{selected: selectedTable == '5'}"/>
     <g>
@@ -114,7 +114,7 @@
     </g>
   </g>
 </g>
-<g id="table-4" @click="selectTable('4')" :class="tables[3].status">
+<g id="table-4" @click="selectTable('4')" :class="getTableStatus(4)">
   <g>
     <path class="table" d="M836.5,164.2H679.9    c-8.1,0-14.7-6.3-14.7-14V78.1c0-7.7,6.6-14,14.7-14h156.5c8.1,0,14.7,6.3,14.7,14v72.1C851.1,157.9,844.5,164.2,836.5,164.2z" :class="{selected: selectedTable == '4'}"/>
     <g>
@@ -122,7 +122,7 @@
     </g>
   </g>
 </g>
-<g id="table-3" @click="selectTable('3')" :class="tables[2].status">
+<g id="table-3" @click="selectTable('3')" :class="getTableStatus(3)">
   <g>
     <path class="table" d="M628.5,164.6H472    c-8.1,0-14.7-6.3-14.7-14V78.5c0-7.7,6.6-14,14.7-14h156.5c8.1,0,14.7,6.3,14.7,14v72.1C643.2,158.3,636.6,164.6,628.5,164.6z" :class="{selected: selectedTable == '3'}"/>
     <g>
@@ -130,7 +130,7 @@
     </g>
   </g>
 </g>
-<g id="table-2" @click="selectTable('2')" :class="tables[1].status">
+<g id="table-2" @click="selectTable('2')" :class="getTableStatus(2)">
   <g>
     <path id="XMLID_2_" class="table" d="M419.8,164.7H263.3c-8.1,0-14.7-6.3-14.7-14V78.6c0-7.7,6.6-14,14.7-14h156.5    c8.1,0,14.7,6.3,14.7,14v72.1C434.5,158.4,427.9,164.7,419.8,164.7z" :class="{selected: selectedTable == '2'}"/>
     <g>
@@ -138,7 +138,7 @@
     </g>
   </g>
 </g>
-<g id="table-1" @click="selectTable('1')" :class="tables[0].status">
+<g id="table-1" @click="selectTable('1')" :class="getTableStatus(1)">
   <g>
     <path class="table" d="M215.4,164.9H58.9c-8.1,0-14.7-6.3-14.7-14V78.8c0-7.7,6.6-14,14.7-14h156.5c8.1,0,14.7,6.3,14.7,14v72.1    C230.1,158.6,223.5,164.9,215.4,164.9z" :class="{selected: selectedTable == '1'}"/>
     <g>

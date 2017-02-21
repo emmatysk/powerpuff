@@ -43,7 +43,7 @@ def clean_svg(root, ns):
             id = int(m.group(1))
             g.attrib['id'] = 'table-%d' % id
             g.attrib['vue-click'] = "selectTable('%d')" % id
-            g.attrib['vue-class'] = "tables[%d].status" % (id - 1)
+            g.attrib['vue-class'] = "getTableStatus(%d)" % id
 
             p = g.xpath('.//ns:path', namespaces=ns)
             if p:
