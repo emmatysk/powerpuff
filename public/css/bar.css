@@ -13,6 +13,24 @@
   height: 70px;
 }
 
+.cross-button {
+    padding: 0px ! important;
+    top: 0.25em ! important;
+    margin-left: 0.2em;
+    color: #b62845 ! important;
+
+}
+
+.wrapper {
+    overflow-y: auto;
+    height:35em !important;
+    padding-bottom:3em;
+}
+
+ul {
+ list-style: none;
+}
+
 #matknapp{
     box-sizing: border-box;
     height: 70px;
@@ -117,16 +135,22 @@
 #right {
   position: relative;
   overflow-y: auto;
-  height: 50em;
-  width: 30em;
-  padding-left: 0px !important;
-  margin-left: 10px;
+  height: 45em;
+  width: 22em;
+  padding: 0px !important;
+  margin-left: 1em;
   margin-top: 13px;
-  background-color: #d9d9d9;
-  border-radius: 5px;  border: 1px solid #989898;
+  background-color: #dcdcdc;
+  border-radius: 5px;  border: 1px solid #aeaeae;
 }
 
 #right h3{
+    color: #757575;
+    border-bottom: 1px solid #757575 ! important;
+    margin-top: 1.4em;
+    margin-left: 1.6em;
+    margin-right:1.5em;
+    text-align: center;
     top:1em;
     font-family: 'Fira Sans', sans-serif ! important;
     font-weight: 200 !important;
@@ -136,13 +160,16 @@
 .pay-button {
     position: absolute !important;
     bottom:0.5em;
-    left:1.7em;
+    left:0.8em;
+
 }
 
-
+.btn-clean {
+    width: 4.7em !important;
+}
 
 .paytest {
-    width:100px !important;
+    width:80px !important;
 }
 
 #left {

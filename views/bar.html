@@ -27,7 +27,7 @@
     })
 </script>
 
-<div id="vue" class="container-fluid ">
+<div id="vue" class="container">
   <div id="left" class="col-lg-8">
     <div id="padding">
       <div class="col-lg-12 row menu-buttons">
@@ -66,14 +66,18 @@
   <div id="right" class ="col-lg-4">
 
     <h3>Din beställning </h3>
-    <div class="col-lg-8 row" v-for="item in orderlist">
-      <a href="#" @click="remove(item)"> <span class="glyphicon glyphicon-remove" style="font-size: 30px;"> </span> </a>
-      <button id="changebutton" @click="change(item)" style="font-size: 20px;" data-whatever="item" data-toggle="modal" data-target="#changeModal"> {{item.title}}  {{item.price}}kr </button>
+    <div class="col-lg-12 row wrapper">
+    <ul>
+      <li v-for="item in orderlist">
+        <a href="#" @click="remove(item)"> <span class="glyphicon glyphicon-remove cross-button" style="font-size: 30px;"> </span> </a>
+        <button id="changebutton" @click="change(item)" style="font-size: 20px;" data-whatever="item" data-toggle="modal" data-target="#changeModal"> {{item.title}}  {{item.price}}kr </button>
+      </li>
+    </ul>
     </div>
     <div class="pay-button" >
       <div class="navbar-right btn-group">
-        <button @click="clear" type="button" class="btn btn-cancel" > Rensa </button>
-        <button class=" btn btn-book" type="button" data-toggle="modal" data-target="#payModal">Betala</button>
+        <button @click="clear" type="button" class="btn btn-cancel btn-clean" > Rensa </button>
+        <button class=" btn btn-book btn-clean" type="button" data-toggle="modal" data-target="#payModal">Betala</button>
       </div>
     </div>
 
