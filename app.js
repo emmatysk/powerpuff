@@ -66,9 +66,12 @@ var tables = function() {
     };
 
     var startTimer = function(id) {
+        var d = new Date();
+        tables[id-1].timer = d.getTime();
     };
 
     var stopTimer = function(id) {
+        tables[id-1].timer = false;
     };
 
     //expose functions
@@ -115,6 +118,12 @@ io.on('connection', function(socket) {
   socket.on('order', function(dish) {
     orders.addOrder(dish);
     tables.setStatus(dish.order.tableNumber, 'waiting');
+    tables.startTimer(dish.order.tableNumber);
+    setTimeout(function() {
+        io.emit('tableCritical', dish.order.tableNumber);
+        }, 5000
+
+    )
     io.emit('currentQueue', orders.getAll());
     io.emit('currentTables', tables.getAll());
     io.emit('orderAdded');

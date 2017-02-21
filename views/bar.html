@@ -41,7 +41,7 @@
         <img :src="'/images/' + type.name + '.png'">
         <h2>{{ type.title }}</h2>
         <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in items" v-if="item.type == type.name" type="button" class="btn btn-menuitem">
+          <button @click="add(item)" v-for="item in menu.foods" v-if="item.type == type.name" type="button" class="btn btn-menuitem">
             {{item.title}}
           </button>
         </div>
@@ -53,7 +53,7 @@
         <img :src="'/images/' + type.name + '.png'">
         <h2>{{ type.title }}</h2>
         <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in items" v-if="item.type == type.name" type="button" class="btn btn-menuitem">
+          <button @click="add(item)" v-for="item in menu.drinks" v-if="item.type == type.name" type="button" class="btn btn-menuitem">
             {{item.title}}
           </button>
         </div>

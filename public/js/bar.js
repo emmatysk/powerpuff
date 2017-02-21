@@ -81,9 +81,6 @@ new Vue({
             }
             return tot;
         },
-        items: function() {
-            return this.menu[this.group];
-        },
         showFood: function() {
             return this.group == 'foods';
         },
