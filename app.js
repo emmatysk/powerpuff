@@ -122,7 +122,13 @@ io.on('connection', function(socket) {
             tables.setStatus(dish.order.tableNumber, 'waiting');
             tables.startTimer(dish.order.tableNumber);
             setTimeout(function () {
-                io.emit('tableCritical', dish.order.tableNumber);
+                var table = tables.getAll()[parseInt(dish.order.tableNumber)-1];
+
+                if (table.status == 'waiting') {
+                    table.status = 'critical';
+                }
+
+                io.emit('currentTables', tables.getAll());
             }, 10000);
         }
 

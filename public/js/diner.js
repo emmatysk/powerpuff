@@ -7,15 +7,6 @@ new Vue({
     data: {
         selectedTable: ''
     },
-    created: function() {
-        socket.on('tableCritical', function(tableNumber) {
-            var table = this.tables[parseInt(tableNumber)-1];
-
-            if (table.status == 'waiting') {
-                table.status = 'critical';
-            }
-        }.bind(this));
-    },
     methods: {
         selectTable: function (number) {
             if (number == this.selectedTable) {
@@ -27,18 +18,6 @@ new Vue({
         },
         cancelTable: function () {
             socket.emit('cancelTable', this.selectedTable);
-        },
-        getTableStatus: function (number) {
-            var table = this.tables[number - 1];
-            var d = new Date();
-            var diff = (d.getTime() - table.timer) / 1000;
-            if (table.status == 'waiting' && diff > 10) {
-                return 'critical'
-            }
-            else {
-                return table.status;
-            }
-
         }
     }
 });
