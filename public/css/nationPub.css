@@ -2,8 +2,8 @@
 
 body {
     padding-top: 0px;
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 200;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-weight: 100 ! important;
 }
 
 .available {
@@ -32,8 +32,9 @@ body {
     top: 13px;
 }
 
+
+
 .btn-book {
-    line-height: 70px; /* <- changed this */
     box-sizing: border-box;
     height: 70px;
     width: 150px;
@@ -47,13 +48,14 @@ body {
 }
 
 
+
+
 .btn-book.outline {
     padding: 15px;
     border:2px solid #33c3ce;
 }
 
-.btn-avboka {
-
+.btn-cancel {
     height: 70px;
     width: 150px;
     background-color: #fbfbfb;
@@ -65,7 +67,7 @@ body {
     font-weight: 200 ! important;
 }
 
-.btn-avboka.outline {
+.btn-cancel.outline {
     padding: 2px;
     border:2px solid #33c3ce;
 }

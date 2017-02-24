@@ -32,6 +32,9 @@ def clean_css(root, ns):
 def clean_svg(root, ns):
     for g in root.xpath('.//ns:g', namespaces=ns):
         try:
+            if g.attrib['id'] == 'Lager_1':
+                g.attrib['vue-click'] = "selectedTable = ''"
+                continue
             m = RE_TABLE.match(g.attrib['id'])
         except KeyError:
             continue

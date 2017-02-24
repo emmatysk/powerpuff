@@ -4,23 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nationsköket</title>
+  <link rel="stylesheet" href="dist/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/nationPub.css">
 </head>
 <body>
   <div id="orders">
     <h1>{{ uiLabels.ordersInQueue }}</h1>
     <ol>
-      <li v-for="(item, key) in orders" v-if="!item.done"> 
-        {{ key }} : {{ item.orderItems.join(', ') }} 
-        <button v-on:click="markDone(key)">
+      <li v-for="(orderItem, orderId) in orders" v-if="!orderItem.done">
+        {{ orderId }} <span v-if="orderItem.order.order.tableNumber">(Table: #{{ orderItem.order.order.tableNumber }})</span>
+        <ul>
+          <li v-for="item in orderItem.order.order.items">
+            {{ item }}
+          </li>
+        </ul>
+        <button class="btn btn-primary" v-on:click="markDone(orderId)">
           {{uiLabels.ready}}
         </button>
       </li>
     </ol>
         <h1>{{ uiLabels.ordersFinished }}</h1>
     <ol>
-      <li v-for="(item, key) in orders" v-if="item.done"> 
-        {{ key }} : {{ item.orderItems.join(', ') }}
+      <li v-for="(orderItem, orderId) in orders" v-if="orderItem.done">
+        {{ orderId }} <span v-if="orderItem.order.order.tableNumber">(Table: #{{ orderItem.order.order.tableNumber }})</span>
+        <ul>
+          <li v-for="item in orderItem.order.order.items">
+            {{ item }}
+          </li>
+        </ul>
       </li>
     </ol>
   </div>

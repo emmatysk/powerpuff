@@ -17,36 +17,41 @@ var lang = "sv";
 
 // get the JSON objects for the dictated language. Wonder if functions take arguments? ;-)
 var getLabelsAndMenu = function() {
-  var ui = require("./data/"+ lang +"/ui.json");
-  var menu = require("./data/"+ lang +"/menu.json");
-  var tables = require("./data/tables.json");
-  return {uiLabels: ui, menu: menu, tables: tables};
+    var ui = require("./data/"+ lang +"/ui.json");
+    var menu = require("./data/items.json");
+    var tables = require("./data/tables.json");
+    return {uiLabels: ui, menu: menu, tables: tables};
 };
 
 // Store orders in a an anonymous class for now. 
 var orders = function() {
-  var orders = {};
+    var orders = {};
 
-  var addOrder = function(dish) {
-    orders[dish.orderId] ={};
-    orders[dish.orderId].orderItems = dish.orderItems;
-    orders[dish.orderId].done = false;
-  };
+    var addOrder = function(dish) {
+        orders[dish.orderId] = {};
+        orders[dish.orderId].order = dish;
+        orders[dish.orderId].done = false;
+    };
 
-  var getAll = function() {
-    return orders;
-  };
+    var getTableNumber = function(orderId) {
+        return orders[orderId].order.order.tableNumber;
+    };
 
-  var markDone = function(orderId) {
-    orders[orderId].done = true;
-  };
+    var getAll = function() {
+        return orders;
+    };
 
-  //expose functions
-  return {
-    addOrder : addOrder,
-    getAll : getAll,
-    markDone : markDone
-  };
+    var markDone = function(orderId) {
+        orders[orderId].done = true;
+    };
+
+    //expose functions
+    return {
+        addOrder : addOrder,
+        getAll : getAll,
+        markDone : markDone,
+        getTableNumber: getTableNumber
+    };
 }(); // instantiate the class immediately
 
 var tables = function() {
@@ -61,9 +66,12 @@ var tables = function() {
     };
 
     var startTimer = function(id) {
+        var d = new Date();
+        tables[id-1].timer = d.getTime();
     };
 
     var stopTimer = function(id) {
+        tables[id-1].timer = false;
     };
 
     //expose functions
@@ -83,15 +91,15 @@ app.use('/dist', express.static(path.join(__dirname, '/node_modules/')));
 
 // Serve diner.html as root page
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'views/diner.html'));
+    res.sendFile(path.join(__dirname, 'views/diner.html'));
 });
 
 app.get('/kitchen', function(req, res) {
-  res.sendFile(path.join(__dirname, 'views/kitchen.html'));
+    res.sendFile(path.join(__dirname, 'views/kitchen.html'));
 });
 
 app.get('/order/:tablenumber', function(req, res) {
-  res.sendFile(path.join(__dirname, 'views/bar.html'));
+    res.sendFile(path.join(__dirname, 'views/bar.html'));
 });
 
 app.get('/overview', function(req, res) {
@@ -99,29 +107,55 @@ app.get('/overview', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  // Send list of orders and text labels when a client connects
-  io.emit('initialize', {
-      orders: orders.getAll(),
-      tables: tables.getAll(),
-      labelsAndMenu: getLabelsAndMenu()
-  });
+    // Send list of orders and text labels when a client connects
+    io.emit('initialize', {
+        orders: orders.getAll(),
+        tables: tables.getAll(),
+        labelsAndMenu: getLabelsAndMenu()
+    });
 
-  // When someone orders something
-  socket.on('order', function(dish) {
-    orders.addOrder(dish);
-    io.emit('currentQueue', orders.getAll());
-  });
+    // When someone orders something
+    socket.on('order', function(dish) {
+        orders.addOrder(dish);
 
-  socket.on('orderDone', function(orderId) {
-    orders.markDone(orderId);
-    io.emit('currentQueue', orders.getAll());
-  });
+        if (dish.order.tableNumber && dish.order.tableNumber != 'bar') {
+            tables.setStatus(dish.order.tableNumber, 'waiting');
+            tables.startTimer(dish.order.tableNumber);
+            setTimeout(function () {
+                var table = tables.getAll()[parseInt(dish.order.tableNumber)-1];
 
-  socket.on('setStatus', function(tableId, status) {
-    tables.setStatus(tableId, status);
-  });
+                if (table.status == 'waiting') {
+                    table.status = 'critical';
+                }
+
+                io.emit('currentTables', tables.getAll());
+            }, 10000);
+        }
+
+        io.emit('currentQueue', orders.getAll());
+        io.emit('currentTables', tables.getAll());
+        io.emit('orderAdded');
+    });
+
+    socket.on('orderDone', function(orderId) {
+        orders.markDone(orderId);
+
+        var tableNumber = orders.getTableNumber(orderId);
+
+        if (tableNumber && tableNumber != 'bar') {
+            tables.setStatus(tableNumber, 'ok');
+        }
+
+        io.emit('currentQueue', orders.getAll());
+        io.emit('currentTables', tables.getAll());
+    });
+
+    socket.on('cancelTable', function(tableId) {
+        tables.setStatus(tableId, 'available');
+        io.emit('currentTables', tables.getAll());
+    });
 });
 
 http.listen(app.get('port'), function() {
-  console.log('Server listening on port ' + app.get('port'));
+    console.log('Server listening on port ' + app.get('port'));
 });

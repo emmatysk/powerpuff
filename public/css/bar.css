@@ -1,3 +1,7 @@
+
+
+
+
 .col-lg-12.row {
   height: 80px;
 }
@@ -9,19 +13,79 @@
   height: 70px;
 }
 
-#matknapp{
-  background-color: #F6A348;
-}
-#matknapp:hover{
-  background-color: #F58F29;
+.cross-button {
+    padding: 0px ! important;
+    top: 0.25em ! important;
+    margin-left: 0.2em;
+    color: #b62845 ! important;
+
 }
 
+.wrapper {
+    overflow-y: auto;
+    height:35em !important;
+    padding-bottom:3em;
+}
+
+ul {
+ list-style: none;
+}
+
+#matknapp{
+    box-sizing: border-box;
+    height: 70px;
+    background-color:#25CACE;
+    color:#ffffff;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-size: 35px ! important;
+    font-weight: 200 ! important;
+}
+
+#food-menu img{
+     height: 7em;
+     width: 7em;
+ }
+
+#drink-menu img{
+    height: 7em;
+    width: 7em;
+}
+
+.menu-buttons {
+    left: 1em;
+}
+
+#matknapp:hover{
+  background-color: #33c4cf;
+}
+
+
+
+.item-group h2 {
+     font-weight: 200 ! important;
+     font-family: 'Fira Sans', sans-serif ! important;
+     font-size: 30px ! important;
+
+     color: #838383;
+ }
+
+.item-group {
+    text-align: center;
+}
+
+
 #dryckesknapp {
-  background-color: #5D8CBA;
+    box-sizing: border-box;
+    height: 70px;
+    background-color: white;
+    color: #25CACE;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-size: 35px ! important;
+    font-weight: 200 ! important;
 }
 
 #dryckesknapp:hover {
-  background-color: #547EA7;
+  background-color: #f7f7f7;
 }
 
 .mat {
@@ -39,7 +103,20 @@
 
 }
 
-  .btn #changebutton {
+.btn-menuitem {
+    border: 1px solid #eaeaea ! important;
+
+    height: 70px;
+    padding: 0px;
+    background-color: #fbfbfb;
+    display:inline-block;
+    color: #0f5a5e;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-size: 25px ! important;
+    font-weight: 200 ! important;
+}
+
+.btn #changebutton {
      border: 2px solid;
      border-color: black;
      padding: 15px 32px;
@@ -47,29 +124,63 @@
      font-size: 16px;
      margin: 6px 0px;
 
-     padding-right: 10px;
+
    }
 
 .btn:hover {
-  background: #ff8c00;
+  background: #f7f7f7;
   text-decoration: none;
 }
 
 #right {
+  position: relative;
   overflow-y: auto;
-  height: 763px;
-  background-color: grey;
-  border-radius: 30px;
+  height: 45em;
+  width: 22em;
+  padding: 0px !important;
+  margin-left: 1em;
+  margin-top: 13px;
+  background-color: #dcdcdc;
+  border-radius: 5px;  border: 1px solid #aeaeae;
+}
+
+#right h3{
+    color: #757575;
+    border-bottom: 1px solid #757575 ! important;
+    margin-top: 1.4em;
+    margin-left: 1.6em;
+    margin-right:1.5em;
+    text-align: center;
+    top:1em;
+    font-family: 'Fira Sans', sans-serif ! important;
+    font-weight: 200 !important;
+    font-size: 30px;
+}
+
+.pay-button {
+    position: absolute !important;
+    bottom:0.5em;
+    left:0.8em;
+
+}
+
+.btn-clean {
+    width: 4.7em !important;
+}
+
+.paytest {
+    width:80px !important;
 }
 
 #left {
-  border: 10px solid;
-  border-radius: 10px;
-  border-color: transparent;
-  background-color: lightgrey;
+
+  border-radius: 5px;
+  padding:0.5em;
+    top: 13px;
+  border: 0.4px solid #ababab;
+  background-color: #ececec;
   height: 1000px;
+  width: 800px;
 }
 
-#changebutton {
 
-}
