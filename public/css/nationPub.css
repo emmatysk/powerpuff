@@ -4,7 +4,6 @@ body {
     padding-top: 0px;
     font-family: 'Fira Sans', sans-serif ! important;
     font-weight: 100 ! important;
-    font-size: 20px ! important;
 }
 
 .available {
@@ -107,6 +106,7 @@ body {
   padding-bottom: 10px;
   padding-top: 10px;
 
+  font-size: 20px ! important;
 }
 
 .orders {
