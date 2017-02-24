@@ -10,6 +10,10 @@ function getOrderNumber() {
     return "#" + getRandomInt(1, 1000000);
 }
 
+function isBarPage() {
+    return window.location.pathname.split('/')[2] == 'bar';
+}
+
 new Vue({
     el: '#vue',
     mixins: [sharedVueStuff], // include stuff that goes to both diner and kitchen
@@ -17,6 +21,10 @@ new Vue({
         socket.on('orderAdded', function() {
             window.location = '/';
         });
+
+        if (isBarPage()) {
+            this.group = 'drinks';
+        }
     },
     data: {
         group: 'foods',
@@ -86,6 +94,9 @@ new Vue({
         },
         showDrinks: function() {
             return this.group == 'drinks';
+        },
+        isBarOrder: function() {
+            return isBarPage();
         }
     }
 })
