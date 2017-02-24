@@ -1,7 +1,5 @@
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+function isBarPage() {
+    return window.location.pathname.split('/')[2] == 'bar';
 }
 
 new Vue({
@@ -11,6 +9,10 @@ new Vue({
         socket.on('orderAdded', function() {
             window.location = '/';
         });
+
+        if (isBarPage()) {
+            this.group = 'drinks';
+        }
     },
     data: {
         group: 'foods',
@@ -81,6 +83,9 @@ new Vue({
         },
         showDrinks: function() {
             return this.group == 'drinks';
+        },
+        isBarOrder: function() {
+            return isBarPage();
         }
     }
 })
