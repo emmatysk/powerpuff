@@ -23,14 +23,17 @@ var getLabelsAndMenu = function() {
     return {uiLabels: ui, menu: menu, tables: tables};
 };
 
-// Store orders in a an anonymous class for now. 
+// Store orders in a an anonymous class for now.
+var orderID = 1;
 var orders = function() {
+
     var orders = {};
 
     var addOrder = function(dish) {
-        orders[dish.orderId] = {};
-        orders[dish.orderId].order = dish;
-        orders[dish.orderId].done = false;
+        var Id = orderID++;
+        orders[Id] = {};
+        orders[Id].order = dish;
+        orders[Id].done = false;
     };
 
     var getTableNumber = function(orderId) {

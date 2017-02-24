@@ -86,3 +86,38 @@ body {
 
     /*margin: 0 auto;*/
 }
+
+#orders {
+  margin-left: 10px;
+}
+
+.ordernumberandtable {
+  font-weight: bold;
+}
+
+
+.tablenumber {
+  border-style: solid;
+  border-width: 0.3px;
+  border-color: #ababab;
+  border-radius: 20px;
+  background-color: #ececec;
+  margin-right: 5px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  font-size: 20px ! important;
+}
+
+.orders {
+  padding-bottom: 20px;
+}
+
+.orderbtn{
+  background-color: #25CACE;
+  border: none;
+  font-size: 20px;
+}
+.orderbtn:hover{
+  background-color: #33c4cf;
+}

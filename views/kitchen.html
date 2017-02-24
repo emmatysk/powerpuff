@@ -10,23 +10,26 @@
 <body>
   <div id="orders">
     <h1>{{ uiLabels.ordersInQueue }}</h1>
-    <ol>
-      <li v-for="(orderItem, orderId) in orders" v-if="!orderItem.done">
-        {{ orderId }} <span v-if="orderItem.order.order.tableNumber">(Table: #{{ orderItem.order.order.tableNumber }})</span>
+
+
+      <div class="orders col-lg-12">
+      <div class="tablenumber col-lg-2 center-block text-left" v-for="(orderItem, orderId) in orders" v-if="!orderItem.done">
+      <div class="ordernumberandtable text-center"> Order: #{{ orderId }} <br> <span v-if="orderItem.order.order.tableNumber">Table: #{{ orderItem.order.order.tableNumber }}</span> </div>
         <ul>
           <li v-for="item in orderItem.order.order.items">
             {{ item }}
           </li>
         </ul>
-        <button class="btn btn-primary" v-on:click="markDone(orderId)">
+        <button class="btn btn-primary orderbtn center-block" v-on:click="markDone(orderId)">
           {{uiLabels.ready}}
         </button>
-      </li>
-    </ol>
+      </div>
+    </div>
+
         <h1>{{ uiLabels.ordersFinished }}</h1>
-    <ol>
-      <li v-for="(orderItem, orderId) in orders" v-if="orderItem.done">
-        {{ orderId }} <span v-if="orderItem.order.order.tableNumber">(Table: #{{ orderItem.order.order.tableNumber }})</span>
+        <div class="orders col-lg-12">
+      <div class="tablenumber col-lg-2 center-block text-left" v-for="(orderItem, orderId) in orders" v-if="orderItem.done">
+        <div class="ordernumberandtable text-center"> Order: #{{ orderId }} <br><span v-if="orderItem.order.order.tableNumber">Table: #{{ orderItem.order.order.tableNumber }}</span> </div>
         <ul>
           <li v-for="item in orderItem.order.order.items">
             {{ item }}
@@ -35,6 +38,8 @@
       </li>
     </ol>
   </div>
+</div>
+</div>
   <script src="/vue/vue.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/nationPub.js"></script>
