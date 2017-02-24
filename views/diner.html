@@ -158,7 +158,7 @@
               </div>
               <div class ="divider"></div>
             <div class="form-group">
-                <a v-bind:href="'order/'+ selectedTable" class="btn btn-book btn-lg outline" >Boka</a>
+                <a v-bind:href="'order/'+ (selectedTable == '' ? 'bar' : selectedTable)" class="btn btn-book btn-lg outline" >Boka</a>
             </div>
             <div class="form-group">
               <button class="btn btn-cancel btn-lg outline" @click="cancelTable" type="button">Avboka</button>
