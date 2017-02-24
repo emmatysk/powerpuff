@@ -4,12 +4,6 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getOrderNumber() {
-    // It's probably not a good idea to generate a random order number, client-side.
-    // A better idea would be to let the server decide.
-    return "#" + getRandomInt(1, 1000000);
-}
-
 new Vue({
     el: '#vue',
     mixins: [sharedVueStuff], // include stuff that goes to both diner and kitchen
@@ -70,8 +64,9 @@ new Vue({
                 items: items
             };
 
-            socket.emit('order', {orderId: getOrderNumber(), order: order});
+            socket.emit('order', {order: order});
         }
+
     },
     computed: {
         totalprice: function() {
