@@ -19,5 +19,5 @@ I översiktslistan <br />
 10) Tryck ”Ändra” för att ändra eller ”Avbryt” för att avbryta <br />
 11) Välj ”Back i översiktslistan för att komma tillbaka till bordssidan <br />
 12) Välj ”Betala” för att öppna en pop-up med totalsumma och de rätter du valt <br />
-12) Tryck ”Kort” eller ”Kontant” beroende på betalsätt eller ”Avbryt” för att tryck ner pop-upen <br />
+12) Tryck ”Kort” eller ”Kontant” beroende på betalsätt eller ”Avbryt” för att trycka ner pop-upen <br />
 
