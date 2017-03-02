@@ -21,3 +21,9 @@ I översiktslistan <br />
 12) Välj ”Betala” för att öppna en pop-up med totalsumma och de rätter du valt <br />
 12) Tryck ”Kort” eller ”Kontant” beroende på betalsätt eller ”Avbryt” för att trycka ner pop-upen <br />
 
+Sidor:
+* [/](http://localhost:3000/) - Välj bord-sida
+* [/kitchen](http://localhost:3000/kitchen) - Köket
+* [/overview](http://localhost:3000/overview) - Bordsöversikt
+* [/order/#](http://localhost:3000/order/1) - Order för bord med nummer #
+* [/order/bar](http://localhost:3000/order/bar) - Ordersidan för baren
