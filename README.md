@@ -1,6 +1,5 @@
 # powerpuff
 Systemdesign projekt
-WAZZUP NIGGAS WE GON MAKE SOME SHIIIT
 
 Handledning: <br />
 1) Öppna terminalen/cmd  <br />
