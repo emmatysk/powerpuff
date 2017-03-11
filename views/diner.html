@@ -181,22 +181,29 @@
 </svg>
 <!-- END: DO NOT EDIT SVG -->
         </div>
+
         <div class="col-lg-4">
-            <div id = "test">
-          <form>
-              <div class="form-group"  width="150px">
-                <label for="table-number"></label>
-                <input type="text" placeholder="Table number" v-model="selectedTable" class="form-control" autocomplete="off" id="table-number" :value="selectedTable">
+
+          <div class="row">
+            <div class="panel panel-diner">
+              <div class="panel-body">
+                <form id="book-table">
+                  <div class="form-group">
+                    <label for="table-number">Valt bord:</label>
+                    <input type="text" placeholder="Bar" v-model="selectedTable" class="form-control" autocomplete="off" id="table-number" :value="selectedTable">
+                  </div>
+                  <div class="form-group" id="book-buttons">
+                    <div class="btn-group btn-group-justified">
+                      <div class="btn-group">
+                        <a v-bind:href="'order/'+ (selectedTable == '' ? 'bar' : selectedTable)" class="btn btn-primary btn-lg">Boka</a>
+                      </div>
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-lg" @click="cancelTable" type="button">Avboka</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class ="divider"></div>
-            <div class="form-group">
-                <a v-bind:href="'order/'+ (selectedTable == '' ? 'bar' : selectedTable)" class="btn btn-book btn-lg outline" >Boka</a>
-            </div>
-            <div class="form-group">
-              <button class="btn btn-cancel btn-lg outline" @click="cancelTable" type="button">Avboka</button>
-            </div>
-          </form>
-            </div>
             </div>
           </div>
 

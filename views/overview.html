@@ -38,11 +38,12 @@
     </header>
 
     <div class="container">
-    <h1>Table Availability</h1>
-    <div :class="item.status" v-for="item in tables">
-      <h4>
-        Table: {{item.id}}, Max: {{item.capacity}}. <span v-if="item.available != item.capacity">Time since order: {{item.timer}}.</span> <span v-if="item.available == item.capacity">Available: {{item.available}}. Bookable.</span> 
-      </h4>
+      <h1>Table Availability</h1>
+      <div :class="item.status" v-for="item in tables">
+        <h4>
+          Table: {{item.id}}, Max: {{item.capacity}}. <span v-if="item.available != item.capacity">Time since order: {{item.timer}}.</span> <span v-if="item.available == item.capacity">Available: {{item.available}}. Bookable.</span>
+        </h4>
+      </div>
     </div>
   </div>
   <script src="/vue/vue.js"></script>

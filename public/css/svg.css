@@ -6,6 +6,19 @@
 .critical .selected{fill:#ff4d4d;stroke:#cc0000;stroke-width:7;stroke-miterlimit:10;}
 .critical text{fill:#ffffff; stroke:#ffffff;}
 
+g:hover .table {
+    fill: #dedede;
+}
+.critical g:hover .table {
+    fill: #cc0000;
+}
+.waiting g:hover .table {
+    fill: #e27f28;
+}
+.ok g:hover .table {
+    fill: #73aa6e;
+}
+
 text {
     cursor: default;
     -webkit-user-select: none;
