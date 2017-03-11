@@ -6,9 +6,43 @@
   <title>Nationsköket</title>
   <link rel="stylesheet" href="dist/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/nationPub.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
   <div id="orders">
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              Burger Pub
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Boka bord</a></li>
+              <li><a href="/order/bar">Ordersida</a></li>
+              <li class="active"><a href="/kitchen">Köket</a></li>
+            </ul>
+
+            <p class="navbar-text navbar-right">
+              Inloggad som
+              <strong>admin</strong>
+            </p>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="row">
     <h1>{{ uiLabels.ordersInQueue }}</h1>
 
 
@@ -42,6 +76,7 @@
 </div>
   <script src="/vue/vue.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/dist/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/nationPub.js"></script>
   <script src="js/kitchen.js"></script>
 </body>
