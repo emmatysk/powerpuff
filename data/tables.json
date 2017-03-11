@@ -10,19 +10,19 @@
     "status": "available",
     "capacity": 5,
     "available": 2,
-    "timer": 80.5
+    "timer": false
   }, {
     "id": 3,
     "status": "available",
     "capacity": 4,
     "available": 1,
-    "timer": 100.9
+    "timer": false
   }, {
     "id": 4,
     "status": "available",
     "capacity": 6,
     "available": 3,
-    "timer": 312.1
+    "timer": false
   }, {
     "id": 5,
     "status": "available",

@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nationsmatsalen</title>
-  <link rel="stylesheet" href="css/nationPub.css">
-  <link rel="stylesheet" href="css/svg.css">
-  <link rel="stylesheet" href="dist/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/dist/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/nationPub.css">
+  <link rel="stylesheet" href="/css/svg.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
   <div id="ordering">
@@ -165,6 +166,37 @@
             </div>
           </form>
             </div>
+            </div>
+          </div>
+
+          <div v-if="selectedTable" class="row">
+            <div class="panel panel-diner panel-table">
+              <div class="panel-heading">
+                <h2>Bord #{{ selectedTable }}</h2>
+              </div>
+              <div class="panel-body">
+                <p>Platser: <strong>{{ getTable.capacity }}</strong></p>
+                <p>Status: <strong>{{ readableStatus(getTable.status) }}</strong></p>
+                <p v-if="getTable.timer">
+                  Beställning:
+                  <strong>{{ timeAgo }}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="!selectedTable" class="row">
+            <div class="panel panel-diner panel-table">
+              <div class="panel-heading">
+                <h2>Information</h2>
+              </div>
+              <div class="panel-body">
+                <p>Lediga platser: <strong>{{ availableSeats }}</strong></p>
+                <p>Lediga bord: <strong>{{ availableTables }}</strong></p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -172,7 +204,9 @@
 
   <script src="/vue/vue.js"></script>
   <script src="/socket.io/socket.io.js"></script>
-  <script src="js/nationPub.js"></script>
-  <script src="js/diner.js"></script>
+  <script src="/dist/moment/min/moment-with-locales.min.js"></script>
+  <script src="/dist/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/nationPub.js"></script>
+  <script src="/js/diner.js"></script>
 </body>
 </html>
