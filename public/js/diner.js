@@ -61,6 +61,11 @@ new Vue({
             }
 
             return count;
+        },
+        isTableSelected: function() {
+            var id = parseInt(this.selectedTable) - 1;
+
+            return id >= 0 && id < this.tables.length;
         }
     }
 });
