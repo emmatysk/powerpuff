@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,300,400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,600,700,800');
 
 body {
-    padding-top: 0px;
-    font-family: 'Fira Sans', sans-serif ! important;
-    font-weight: 100 ! important;
+    font: 100 1.0em 'Fira Sans', sans-serif;
+    margin-top: 55px;
 }
 
 .available {
@@ -22,102 +21,122 @@ body {
     background-color: #ffd2ca;
 }
 
-#test{
-    width: 180px;
-    border-radius: 5px;
-    border: 0.4px solid #ababab;
+.navbar {
+    font-size: 1.8em;
+}
+    .navbar-default {
+        background-color: #ececec;
+        border-bottom: 1px solid #cbcbcb;
+    }
+    .navbar li a {
+        font-weight: 500;
+    }
+.navbar-brand {
+    font-weight: 200;
+}
+.navbar-default .navbar-nav>.active>a {
+    background-color: #cecece;
+}
+.navbar-text {
+    font-weight: 300;
+}
+
+.panel-diner {
     background-color: #ececec;
-    padding: 1em;
-    position: fixed;
-    top: 13px;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+    font-size: 1.8em;
+    margin-top: 13px;
+    padding: 0.5em;
+}
+.panel-diner .panel-heading {
+    font-size: 1.4em;
+    font-weight: 200;
 }
 
-
-
-.btn-book {
-    box-sizing: border-box;
-    height: 70px;
-    width: 150px;
-    background-color:#25CACE;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family: 'Fira Sans', sans-serif ! important;
-    font-size: 30px ! important;
-    font-weight: 200 ! important;
+.panel-order .panel-body {
+    color: #131313;
+    font-weight: 200;
+}
+.panel-order .panel-heading small {
+    float: right;
+    font-weight: 100;
 }
 
-
-
-
-.btn-book.outline {
-    padding: 15px;
-    border:2px solid #33c3ce;
+.panel-table h2 {
+    font-size: 1.2em;
+    font-weight: 200;
+}
+.panel-table p {
+    font-size: 1.1em;
+    font-weight: 300;
 }
 
-.btn-cancel {
-    height: 70px;
-    width: 150px;
+.btn {
+    font-size: 1.2em;
+    font-weight: 200;
+    padding: 10px 25px;
+}
+
+.btn-lg {
+    font-size: 1.7em;
+}
+
+.btn-default {
     background-color: #fbfbfb;
-    display:inline-block;
-    color:#ffffff;
+    border: 2px solid #33c3ce;
     color: #33c3ce;
-    font-family: 'Fira Sans', sans-serif ! important;
-    font-size: 30px ! important;
-    font-weight: 200 ! important;
+}
+    .btn-default:focus,
+    .btn-default:hover {
+        background-color: #fbfbfb;
+        border: 2px solid #33c3ce;
+    }
+
+.btn-primary {
+    background-color: #25CACE;
+    border: 2px solid #33c3ce;
+    color: #fff;
+}
+    .btn-primary:focus,
+    .btn-primary:hover {
+        background-color: #25CACE;
+        border: 2px solid #33c3ce;
+        color: #2e2e2e;
+    }
+.btn-danger:hover,
+.btn-danger {
+    background-color: #d9534f !important;
+}
+.btn-success:hover,
+.btn-success {
+    background-color: #5cb85c !important;
 }
 
-.btn-cancel.outline {
-    padding: 2px;
-    border:2px solid #33c3ce;
+input[type="text"].form-control {
+    height: inherit;
 }
 
-.divider{
-    display:inline-block;
-    height:auto;
+form input[type="text"] {
+    border-radius: 35px;
+    font-size: 2.0em;
+    font-weight: 200;
+    padding: 10px 0;
 }
 
-#table-number {
-    width: 150px;
-    height: 65px;
-    font-size: 20px;
-    border-radius: 35px ! important;
+form label {
+    font-size: 1.4em;
+    font-weight: 200;
+}
+
+form#book-table {
     text-align: center;
-
-    /*margin: 0 auto;*/
 }
+    form#book-table input,
+    form#book-table .btn {
+        text-align: center;
+    }
 
-#orders {
-  margin-left: 10px;
-}
-
-.ordernumberandtable {
-  font-weight: bold;
-}
-
-
-.tablenumber {
-  border-style: solid;
-  border-width: 0.3px;
-  border-color: #ababab;
-  border-radius: 20px;
-  background-color: #ececec;
-  margin-right: 5px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-
-  font-size: 20px ! important;
-}
-
-.orders {
-  padding-bottom: 20px;
-}
-
-.orderbtn{
-  background-color: #25CACE;
-  border: none;
-  font-size: 20px;
-}
-.orderbtn:hover{
-  background-color: #33c4cf;
+#book-buttons {
+    margin-top: 40px;
 }

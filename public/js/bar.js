@@ -1,5 +1,5 @@
-function isBarPage() {
-    return window.location.pathname.split('/')[2] == 'bar';
+function getTableId() {
+    return window.location.pathname.split('/')[2];
 }
 
 new Vue({
@@ -10,7 +10,7 @@ new Vue({
             window.location = '/';
         });
 
-        if (isBarPage()) {
+        if (getTableId() == 'bar') {
             this.group = 'drinks';
         }
     },
@@ -85,7 +85,10 @@ new Vue({
             return this.group == 'drinks';
         },
         isBarOrder: function() {
-            return isBarPage();
+            return getTableId() == 'bar';
+        },
+        getTableNumber: function() {
+            return getTableId();
         }
     }
 })

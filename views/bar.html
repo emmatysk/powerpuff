@@ -23,110 +23,170 @@
     })
 </script>
 
-<div id="vue" class="container">
-  <div id="left" class="col-lg-8">
-    <div id="padding">
-      <div class="col-lg-12 row menu-buttons">
-        <button id="matknapp" @click="selectCategory('foods')" class="col-lg-6 btn" > Mat</button>
-        <button id="dryckesknapp" @click="selectCategory('drinks')" class="col-lg-6 btn" > Dryck</button>
-      </div>
-    </div>
-
-    <div class="row item-group" id="food-menu" v-if="showFood">
-      <div class="col-lg-4" v-for="type in categories.food">
-        <img :src="'/images/' + type.name + '.png'">
-        <h2>{{ type.title }}</h2>
-        <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in menu.foods" v-if="item.type == type.name" type="button" class="btn btn-menuitem">
-            {{item.title}}
+<div id="vue">
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
           </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="row item-group" id="drink-menu" v-if="showDrinks">
-      <div class="col-lg-4" v-for="type in categories.drinks">
-        <img :src="'/images/' + type.name + '.png'">
-        <h2>{{ type.title }}</h2>
-        <div class="btn-group-vertical">
-          <button @click="add(item)" v-for="item in menu.drinks" v-if="item.type == type.name" type="button" class="btn btn-menuitem">
-            {{item.title}}
-          </button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div id="right" class ="col-lg-4">
-
-    <h3>Din beställning </h3>
-    <div class="col-lg-12 row wrapper">
-    <ul>
-      <li v-for="item in orderlist">
-        <a href="#" @click="remove(item)"> <span class="glyphicon glyphicon-remove cross-button" style="font-size: 30px;"> </span> </a>
-        <button id="changebutton" @click="change(item)" style="font-size: 20px;" data-whatever="item" data-toggle="modal" data-target="#changeModal"> {{item.title}}  {{item.price}}kr </button>
-      </li>
-    </ul>
-    </div>
-    <div class="pay-button" >
-      <div class="navbar-right btn-group">
-        <a href="/" type="button" class="btn btn-cancel btn-clean" > Back </a>
-        <button class=" btn btn-book btn-clean" type="button" data-toggle="modal" data-target="#payModal">Betala</button>
-      </div>
-    </div>
-
-    <!-- PayModal -->
-    <div class="modal fade" id="payModal" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- PayModal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Din order</h4>
-          </div>
-          <div class="modal-body">
-            <p v-for="item in orderlist"> {{item.title}} {{item.price}}kr </p>
-            <h3>Total: {{totalprice}}kr</h3>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
-            <button @click="pay" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
-            <button @click="pay" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
-          </div>
+          <a class="navbar-brand" href="/">
+            Burger Pub
+          </a>
         </div>
 
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Boka bord</a></li>
+            <li class="active"><a href="#">Ordersida</a></li>
+            <li><a href="/kitchen">Köket</a></li>
+          </ul>
+
+          <p class="navbar-text navbar-right">
+            Inloggad som
+            <strong>admin</strong>
+          </p>
+        </div>
       </div>
-    </div>
+    </nav>
+  </header>
 
-    <!-- ChangeModal -->
-    <div class="modal fade" id="changeModal" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- ChangeModal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">New message</h4>
-          </div>
-          <div class="modal-body">
-            <div v-for="item in hej">
-              <a href="#" @click="removeingrident(item)"> <span class="glyphicon glyphicon-remove" style="font-size: 15px;"> </span>  </a>
-              <p style="font-size: 15px">{{item}}</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="panel panel-diner panel-items">
+          <div class="panel-heading">
+            <div id="category-buttons" class="btn-group btn-group-justified">
+              <div class="btn-group">
+                <a class="btn btn-default btn-lg" :class="{ active: showFood }" @click="selectCategory('foods')">Mat</a>
+              </div>
+              <div class="btn-group">
+                <a class="btn btn-default btn-lg" :class="{ active: showDrinks }" @click="selectCategory('drinks')">Dryck</a>
+              </div>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
-            <button @click="change" type="button" class="btn btn-success" data-dismiss="modal">Ändra</button>
+          <div class="panel-body">
+
+            <div class="row item-group" id="food-menu-new" v-if="showFood">
+              <div class="col-sm-4 col-xs-6" v-for="type in categories.food">
+                <img class="item-icon" :src="'/images/' + type.name + '.png'">
+                <h2>{{ type.title }}</h2>
+                <div class="btn-group-vertical">
+                  <button @click="add(item)" v-for="item in menu.foods" v-if="item.type == type.name" type="button" class="btn btn-default btn-menuitem">
+                    {{item.title}}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row item-group" id="drink-menu-new" v-if="showDrinks">
+              <div class="col-sm-4 col-xs-6" v-for="type in categories.drinks">
+                <img class="item-icon" :src="'/images/' + type.name + '.png'">
+                <h2>{{ type.title }}</h2>
+                <div class="btn-group-vertical">
+                  <button @click="add(item)" v-for="item in menu.drinks" v-if="item.type == type.name" type="button" class="btn btn-default btn-menuitem">
+                    {{item.title}}
+                  </button>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+      </div>
 
+      <div class="col-lg-4">
+        <div class="panel panel-diner" id="current-order">
+          <div class="panel-heading">
+            Beställning för
+            <span v-if="isBarOrder">baren</span>
+            <span v-else>bord #{{ getTableNumber }}</span>
+          </div>
+          <div class="panel-body">
+            <div id="order-list">
+              <ul>
+                <li v-for="item in orderlist">
+                  <a href="#" class="remove-item" @click="remove(item)"><span class="glyphicon glyphicon-remove"></span></a>
+                  <button @click="change(item)" class="btn btn-menuitem btn-orderitem" data-whatever="item" data-toggle="modal" data-target="#changeModal"> {{item.title}}  {{item.price}}kr </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="btn-group btn-group-justified">
+              <div class="btn-group">
+                <a href="/" class="btn btn-default btn-lg" type="button">Tillbaka</a>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#payModal">Betala</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
+
+  <!-- PayModal -->
+  <div class="modal fade" id="payModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- PayModal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Din order</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li v-for="item in orderlist">
+              {{item.title}}
+              <strong>{{item.price}}kr</strong>
+            </li>
+          </ul>
+
+          <h3>Total: {{totalprice}}kr</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
+          <button @click="pay" type="button" class="btn btn-success" data-dismiss="modal">Kort</button>
+          <button @click="pay" type="button" class="btn btn-success" data-dismiss="modal">Kontant</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ChangeModal -->
+  <div class="modal fade" id="changeModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- ChangeModal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Ändra vara</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li v-for="item in hej">
+              <a href="#" class="remove-item" @click="removeingrident(item)"> <span class="glyphicon glyphicon-remove"> </span>  </a>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
+          <button @click="change" type="button" class="btn btn-success" data-dismiss="modal">Ändra</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <script src="/vue/vue.js"></script>
 <script src="/socket.io/socket.io.js"></script>
