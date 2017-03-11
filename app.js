@@ -12,6 +12,8 @@ var path = require('path');
 var port = 3000;
 app.set('port', (process.env.PORT || port));
 
+const MINS_UNTIL_CRITICAL = 30;
+
 // Language should be user specific but default is set here
 var lang = "sv";
 
@@ -132,7 +134,7 @@ io.on('connection', function(socket) {
                 }
 
                 io.emit('currentTables', tables.getAll());
-            }, 10000);
+            }, MINS_UNTIL_CRITICAL * 60 * 1000);
         }
 
         io.emit('currentQueue', orders.getAll());
@@ -155,6 +157,7 @@ io.on('connection', function(socket) {
 
     socket.on('cancelTable', function(tableId) {
         tables.setStatus(tableId, 'available');
+        tables.stopTimer(tableId);
         io.emit('currentTables', tables.getAll());
     });
 });
