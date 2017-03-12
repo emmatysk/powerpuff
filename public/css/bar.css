@@ -1,6 +1,7 @@
 .panel-items {
     font-size: 0.9em;
     height: 100%;
+    overflow-y: auto;
 }
 
 ul {
