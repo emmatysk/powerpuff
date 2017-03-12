@@ -35,7 +35,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/">
-            Burger Pub
+            Wermlandskällar’n
           </a>
         </div>
 
@@ -57,7 +57,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-8">
+      <div id="item-list" class="col-lg-8">
         <div class="panel panel-diner panel-items">
           <div class="panel-heading">
             <div id="category-buttons" class="btn-group btn-group-justified">
@@ -108,12 +108,12 @@
           </div>
           <div class="panel-body">
             <div id="order-list">
-              <ul>
-                <li v-for="item in orderlist">
+              <transition-group name="items" tag="ul">
+                <v-touch tag="li" @swipeleft="remove(item)" v-for="item in orderlist" v-bind:key="item" v-bind:swipe-options="{ direction: 'horizontal' }">
                   <a href="#" class="remove-item" @click="remove(item)"><span class="glyphicon glyphicon-remove"></span></a>
                   <button @click="change(item)" class="btn btn-menuitem btn-orderitem" data-whatever="item" data-toggle="modal" data-target="#changeModal"> {{item.title}}  {{item.price}}kr </button>
-                </li>
-              </ul>
+                </v-touch>
+              </transition-group>
             </div>
 
             <div class="btn-group btn-group-justified">
@@ -171,12 +171,12 @@
           <h4 class="modal-title">Ändra vara</h4>
         </div>
         <div class="modal-body">
-          <ul>
-            <li v-for="item in hej">
+          <transition-group name="items" tag="ul">
+            <v-touch @swipeleft="removeingrident(item)" v-for="item in hej" v-bind:key="item" v-bind:swipe-options="{ direction: 'horizontal' }">
               <a href="#" class="remove-item" @click="removeingrident(item)"> <span class="glyphicon glyphicon-remove"> </span>  </a>
               {{ item }}
-            </li>
-          </ul>
+            </v-touch>
+          </transition-group>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Avbryt</button>
@@ -189,6 +189,8 @@
 </div>
 
 <script src="/vue/vue.js"></script>
+<script src="/dist/hammerjs/hammer.min.js"></script>
+<script src="/dist/vue-touch/dist/vue-touch.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/dist/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/js/nationPub.js"></script>

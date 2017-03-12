@@ -8,6 +8,9 @@ new Vue({
     markDone: function(orderid) {
       this.orders[orderid].done = true;
       socket.emit("orderDone", orderid);
+    },
+    undoDone: function(orderid) {
+      socket.emit("undoDone", orderid);
     }
   }
 });

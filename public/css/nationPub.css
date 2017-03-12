@@ -140,3 +140,28 @@ form#book-table {
 #book-buttons {
     margin-top: 40px;
 }
+.waiting-orders-enter-active, .waiting-orders-leave-active,
+.done-orders-enter-active, .done-orders-leave-active {
+  transition: all 0.3s ease;
+}
+.waiting-orders-enter {
+  opacity: 0;
+  transform: translateX(60px);
+}
+.waiting-orders-leave-to {
+  opacity: 0;
+  transform: translateX(60px);
+}
+.done-orders-enter {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+.done-orders-leave-to {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+#done-orders .panel-diner {
+    background-color: #d3ead7;
+    border-color: #8f9e92;
+}

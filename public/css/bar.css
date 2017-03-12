@@ -92,3 +92,11 @@ ul {
     font-size: 1.8em !important;
     font-weight: 500 !important;
 }
+
+.items-enter-active, .items-leave-active {
+  transition: all 0.3s;
+}
+.items-enter, .items-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}

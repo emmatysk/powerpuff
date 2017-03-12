@@ -155,6 +155,18 @@ io.on('connection', function(socket) {
         io.emit('currentTables', tables.getAll());
     });
 
+    socket.on('undoDone', function(orderId) {
+        var tableNumber = orders.getTableNumber(orderId);
+
+        if (tableNumber && tableNumber != 'bar') {
+            tables.setStatus(tableNumber, 'waiting');
+        }
+        
+        orders.getAll()[orderId].done = false;
+        io.emit('currentQueue', orders.getAll());
+        io.emit('currentTables', tables.getAll());
+    });
+
     socket.on('cancelTable', function(tableId) {
         tables.setStatus(tableId, 'available');
         tables.stopTimer(tableId);

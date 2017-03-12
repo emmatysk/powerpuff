@@ -21,7 +21,7 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">
-              Burger Pub
+              Wermlandskällar’n
             </a>
           </div>
 
@@ -43,52 +43,68 @@
 
     <div class="container">
       <div class="row">
-        <h1>{{ uiLabels.ordersInQueue }}</h1>
 
-        <div class="col-lg-3 col-md-4 col-sm-6" v-for="(orderItem, orderId) in orders" v-if="!orderItem.done">
-          <div class="panel panel-diner panel-order">
-            <div class="panel-heading">
-              Order: #{{ orderId }}
-              <small v-if="orderItem.order.order.tableNumber">Table: #{{ orderItem.order.order.tableNumber }}</small>
+        <div class="col-md-8">
+
+          <h1>{{ uiLabels.ordersInQueue }}</h1>
+
+          <transition-group tag="div" :class="'row'" name="waiting-orders">
+            <div class="col-lg-4 col-md-6 col-xs-12" v-for="(orderItem, orderId) in orders" :key="(orderItem, orderId)" v-if="!orderItem.done">
+              <v-touch :class="'panel panel-diner panel-order'" @swiperight="markDone(orderId)" v-bind:swipe-options="{ direction: 'horizontal' }">
+                <div class="panel-heading">
+                  Order #{{ orderId }}
+                  <small v-if="orderItem.order.order.tableNumber">Bord {{ orderItem.order.order.tableNumber }}</small>
+                  <small v-else>Baren</small>
+                </div>
+                <div class="panel-body">
+                  <ul>
+                    <li v-for="item in orderItem.order.order.items">
+                      {{ item }}
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary" v-on:click="markDone(orderId)">
+                    {{uiLabels.ready}}
+                  </button>
+                </div>
+              </v-touch>
             </div>
-            <div class="panel-body">
-              <ul>
-                <li v-for="item in orderItem.order.order.items">
-                  {{ item }}
-                </li>
-              </ul>
-              <button class="btn btn-primary" v-on:click="markDone(orderId)">
-                {{uiLabels.ready}}
-              </button>
-            </div>
-          </div>
+          </transition-group>
+
         </div>
 
-      </div>
+        <div class="col-md-3 col-md-offset-1" id="done-orders">
 
-      <div class="row">
-        <h1>{{ uiLabels.ordersFinished }}</h1>
+          <h1>Färdiga</h1>
 
-        <div class="col-lg-3 col-md-4 col-sm-6" v-for="(orderItem, orderId) in orders" v-if="orderItem.done">
-          <div class="panel panel-diner panel-order">
-            <div class="panel-heading">
-              Order: #{{ orderId }}
-              <small v-if="orderItem.order.order.tableNumber">Table: #{{ orderItem.order.order.tableNumber }}</small>
+          <transition-group tag="div" :class="'row'" name="done-orders">
+            <div class="col-lg-12" v-for="(orderItem, orderId) in orders" :key="(orderItem, orderId)" v-if="orderItem.done">
+              <v-touch :class="'panel panel-diner panel-order'" @swipeleft="undoDone(orderId)" v-bind:swipe-options="{ direction: 'horizontal' }">
+                <div class="panel-heading">
+                  Order #{{ orderId }}
+                  <small v-if="orderItem.order.order.tableNumber">Bord {{ orderItem.order.order.tableNumber }}</small>
+                  <small v-else>Baren</small>
+                </div>
+                <div class="panel-body">
+                  <ul>
+                    <li v-for="item in orderItem.order.order.items">
+                      {{ item }}
+                    </li>
+                  </ul>
+                  <button class="btn btn-default" v-on:click="undoDone(orderId)">
+                    Ångra klar
+                  </button>
+                </div>
+              </v-touch>
             </div>
-            <div class="panel-body">
-              <ul>
-                <li v-for="item in orderItem.order.order.items">
-                  {{ item }}
-                </li>
-              </ul>
-            </div>
-          </div>
+          </transition-group>
         </div>
       </div>
     </div>
   </div>
 
   <script src="/vue/vue.js"></script>
+  <script src="/dist/hammerjs/hammer.min.js"></script>
+  <script src="/dist/vue-touch/dist/vue-touch.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="/dist/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/nationPub.js"></script>
