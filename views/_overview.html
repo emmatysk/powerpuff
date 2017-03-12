@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Översikt | Burger Pub</title>
+  <link rel="stylesheet" href="/dist/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/nationPub.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <div id="ordering">
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              Burger Pub
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Boka bord</a></li>
+              <li><a href="/order/bar">Ordersida</a></li>
+              <li class="active"><a href="/overview">Översikt</a></li>
+              <li><a href="/kitchen">Köket</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>Table Availability</h1>
+      <div :class="item.status" v-for="item in tables">
+        <h4>
+          Table: {{item.id}}, Max: {{item.capacity}}. <span v-if="item.available != item.capacity">Time since order: {{item.timer}}.</span> <span v-if="item.available == item.capacity">Available: {{item.available}}. Bookable.</span>
+        </h4>
+      </div>
+    </div>
+  </div>
+  <script src="/vue/vue.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/dist/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/nationPub.js"></script>
+  <script src="js/overview.js"></script>
+</body>
+</html>
